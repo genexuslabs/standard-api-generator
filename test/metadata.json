@@ -1,0 +1,29 @@
+{
+  "definitions": [
+    {
+      "name": "Core",
+      "description": "",
+      "methods": [
+        {
+          "name": "AddMth",
+          "parameters": [
+            {
+              "name": "Value",
+              "type": "Date",
+              "optional": false,
+              "description": ""
+            },
+            {
+              "name": "Months",
+              "type": "Numeric",
+              "optional": false,
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "properties": [],
+      "events": []
+    }
+  ]
+}

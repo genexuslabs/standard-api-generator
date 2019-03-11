@@ -1,0 +1,43 @@
+{
+  "name": "standard-api-generator",
+  "version": "0.0.1",
+  "description": "A CLI for generating GeneXus standard functions index.ts file from a definition file and a set of parameters",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js -o ./test/options.json -m ./test/metadata.json",
+    "precommit": "pretty-quick --staged",
+    "pretty-quick": "pretty-quick",
+    "test": "jest --no-cache",
+    "test.watch": "jest --watch --no-cache",
+    "validate": "npm run test"
+  },
+  "keywords": [
+    "genexus",
+    "standard",
+    "functions",
+    "generator"
+  ],
+  "author": "GeneXus",
+  "license": "MIT",
+  "dependencies": {
+    "cli": "^1.0.1",
+    "handlebars": "^4.1.0"
+  },
+  "devDependencies": {
+    "jest": "^24.4.0",
+    "jest-cli": "^24.4.0",
+    "prettier": "^1.16.4",
+    "pretty-quick": "^1.10.0"
+  },
+  "jest": {
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?)$",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "node"
+    ]
+  },
+  "bin": {
+    "gx-api-gen": "index.js"
+  }
+}
