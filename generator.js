@@ -15,37 +15,51 @@ function notImplemented() {
 }
 
 {{#each definitions}}
-  {{> generate_type this}}
+{{> generate_type this}}
 {{/each}}
 `);
 
 Handlebars.registerPartial('generate_type', `
-  export class {{sanitizeClassName name}} {
-  {{#each methods}}
+export class {{sanitizeClassName name}} {
+{{#each methods}}
   {{> generate_method this}}
-  {{/each}}
+{{/each}}
     
-  {{#each properties}}
-  {{/each}}
-  }
-  `);
+{{#each properties}}
+  {{> generate_property this}}
+{{/each}}
+}
+`);
 
 Handlebars.registerPartial('generate_method', `
-  /**
-   * {{description}}
-  {{#each parameters}}
-   * @param {{sanitizeName name}}
-  {{/each}}
-  {{#if returns}}
-   * @return {{mapType returns}}
-  {{/if}}
-   */
-  {{name}}({{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
-    notImplemented();{{#if returns}}
-    return null;
-    {{/if}}
-  }
-  `);
+/**
+ * {{description}}
+{{#each parameters}}
+ * @param {{sanitizeName name}}
+{{/each}}
+{{#if returns}}
+ * @return {{mapType returns}}
+{{/if}}
+ */
+static {{name}}({{#unless static}}self: any{{#if parameters.length}}, {{/if}}{{/unless}}{{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
+  notImplemented();{{#if returns}}
+  return null;{{/if}}
+}
+`);
+
+Handlebars.registerPartial('generate_property', `
+/**
+ * {{description}}
+ */
+{{#if static}}static {{/if}} get {{sanitizeName name}}(): {{mapType type}} {
+  notImplemented();
+  return null;
+}
+{{#unless readonly}}{{#if static}}static {{/if}} set {{sanitizeName name}}(value: {{mapType type}}) {
+  notImplemented();
+  return null;
+}{{/unless}}
+`);
 
 const IndeterminateDataType = "any";
 const ObjectDataType = "any";
