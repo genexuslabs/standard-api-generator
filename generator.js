@@ -57,7 +57,6 @@ Handlebars.registerPartial('generate_property', `
 }
 {{#unless readonly}}{{#if static}}static {{/if}} set {{sanitizeName name}}(value: {{mapType type}}) {
   notImplemented();
-  return null;
 }{{/unless}}
 `);
 
