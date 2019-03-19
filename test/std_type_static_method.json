@@ -1,0 +1,37 @@
+{
+  "definitions": [
+    {
+      "description": "",
+      "methods": [
+        {
+          "description": "",
+          "parameters": [
+            {
+              "accesstype": "in",
+              "description": "",
+              "type": "Numeric",
+              "name": "Year"
+            },
+            {
+              "accesstype": "in",
+              "description": "",
+              "type": "Numeric",
+              "name": "Month"
+            },
+            {
+              "accesstype": "in",
+              "description": "",
+              "type": "Numeric",
+              "name": "Day"
+            }
+          ],
+          "returns": "Date",
+          "scopes": null,
+          "static": true,
+          "name": "New"
+        }
+      ],
+      "name": "Date"
+    }
+  ]
+}

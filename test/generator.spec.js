@@ -19,3 +19,12 @@ describe("standard type method generation", () => {
     expect(result).toEqual(expected);
   });
 });
+
+describe("standard type static method generation", () => {
+  var metadata = require("./std_type_static_method.json");
+  var expected = fs.readFileSync("test/std_type_static_method.out.ts", "utf8");
+  const result = generator(metadata, options);
+  it(`should work`, () => {
+    expect(result).toEqual(expected);
+  });
+});
