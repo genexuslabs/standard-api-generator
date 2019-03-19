@@ -1,0 +1,17 @@
+{
+  "definitions": [
+    {
+        "description": "",
+        "methods": [
+          {
+            "description": "",
+            "parameters": [],
+            "returns": "Boolean",
+            "scopes": null,
+            "name": "IsEmpty"
+          }
+        ],
+        "name": "Numeric"
+      }
+  ]
+}
