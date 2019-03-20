@@ -1,8 +1,11 @@
 const Handlebars = require("handlebars");
+const cli = require("cli");
+const preprocess = require("./preprocessor");
 
 function generate(metadata, options) {
   if (metadata.definitions) {
-    return template(metadata);
+    const processedMetadata = preprocess(metadata, options);
+    return template(processedMetadata);
   }
   return "";
 }
@@ -18,7 +21,9 @@ function notImplemented() {
 {{/each}}
 `);
 
-Handlebars.registerPartial('generate_type', `
+Handlebars.registerPartial(
+  "generate_type",
+  `
 export class {{sanitizeClassName name}} {
 {{#each methods}}
   {{> generate_method this}}
@@ -27,9 +32,12 @@ export class {{sanitizeClassName name}} {
   {{> generate_property this}}
 {{/each}}
 }
-`);
+`
+);
 
-Handlebars.registerPartial('generate_method', `
+Handlebars.registerPartial(
+  "generate_method",
+  `
 /**
 {{#if description}}
  * {{description}}
@@ -45,9 +53,12 @@ static {{name}}({{#unless static}}self: any{{#if parameters.length}}, {{/if}}{{/
   notImplemented();{{#if returns}}
   return null;{{/if}}
 }
-`);
+`
+);
 
-Handlebars.registerPartial('generate_property', `
+Handlebars.registerPartial(
+  "generate_property",
+  `
 /**
  * {{description}}
  */
@@ -58,7 +69,8 @@ Handlebars.registerPartial('generate_property', `
 {{#unless readonly}}{{#if static}}static {{/if}} set {{sanitizeName name}}(value: {{mapType type}}) {
   notImplemented();
 }{{/unless}}
-`);
+`
+);
 
 const IndeterminateDataType = "any";
 const ObjectDataType = "any";

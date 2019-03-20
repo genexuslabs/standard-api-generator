@@ -1,4 +1,31 @@
 {
     "metadataFilePath": "../../../out.json",
-    "outputFilePath": "out/not_implemented.ts"
+    "outputFilePath": "out/not_implemented.ts",
+
+    "implemented": {
+        "Core": {
+			"members": {
+				"LTrim": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/text/ltrim",
+					"name": "ltrim"
+				}
+			}
+		},
+		"GeneXus.SD.Media.Audio": {
+			"members": {
+				"Play": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/media/audio/play",
+					"isDefault": false,
+					"name": "play",
+					"alias": "playAudio"
+				}
+			}
+		},
+		"Directory": {
+			"path": "@genexus/web-standard-functions/dist/lib-esm/fs/directory"
+		},
+		"File": {
+			"path": "@genexus/web-standard-functions/dist/lib-esm/fs/file"
+		}
+    }
 }
