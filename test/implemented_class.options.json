@@ -1,0 +1,7 @@
+{
+    "implemented": {
+        "Numeric": {
+			"path": "@genexus/web-standard-functions/dist/lib-esm/numeric"
+        }
+    }
+}

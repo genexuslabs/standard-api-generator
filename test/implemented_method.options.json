@@ -1,0 +1,12 @@
+{
+    "implemented": {
+        "Core": {
+			"members": {
+				"LTrim": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/text/ltrim",
+					"name": "ltrim"
+				}
+			}
+        }
+    }
+}
