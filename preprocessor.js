@@ -78,7 +78,7 @@ function shouldGenerateClass(def) {
   let genClass = false;
   if (def.methods) {
     genClass = def.methods.reduce((result, method) => {
-      return result || method.static;
+      return result || !method.static;
     }, false);
   }
   if (!genClass && def.properties) {
