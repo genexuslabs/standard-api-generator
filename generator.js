@@ -10,58 +10,23 @@ function generate(metadata, options) {
   return "";
 }
 
-const template = Handlebars.compile(fs.readFileSync("templates/not_implemented.ts.hbs", "utf8"));
-
-Handlebars.registerPartial(
-  "generate_type",
-  `
-export class {{sanitizeClassName name}} {
-{{#each methods}}
-  {{> generate_method this}}
-{{/each}}
-{{#each properties}}
-  {{> generate_property this}}
-{{/each}}
+function readTemplateFile(fileName) {
+  return fs.readFileSync(`templates/${fileName}.hbs`, "utf8")
 }
-`
-);
 
-Handlebars.registerPartial(
-  "generate_method",
-  `
-/**
-{{#if description}}
- * {{description}}
-{{/if}}
-{{#each parameters}}
- * @param {{sanitizeName name}}
-{{/each}}
-{{#if returns}}
- * @return {{mapType returns}}
-{{/if}}
- */
-static {{name}}({{#unless static}}self: any{{#if parameters.length}}, {{/if}}{{/unless}}{{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
-  notImplemented();{{#if returns}}
-  return null;{{/if}}
+function readPartialTemplateFile(partialName) {
+  return readTemplateFile(`${partialName}.partial`)
 }
-`
-);
 
-Handlebars.registerPartial(
-  "generate_property",
-  `
-/**
- * {{description}}
- */
-{{#if static}}static {{/if}} get {{sanitizeName name}}(): {{mapType type}} {
-  notImplemented();
-  return null;
+function registerPartial(partialName) {
+  Handlebars.registerPartial(partialName, readPartialTemplateFile(partialName))
 }
-{{#unless readonly}}{{#if static}}static {{/if}} set {{sanitizeName name}}(value: {{mapType type}}) {
-  notImplemented();
-}{{/unless}}
-`
-);
+
+const template = Handlebars.compile(readTemplateFile("not_implemented.ts"));
+
+registerPartial("generate_type");
+registerPartial("generate_method");
+registerPartial("generate_property");
 
 const IndeterminateDataType = "any";
 const ObjectDataType = "any";

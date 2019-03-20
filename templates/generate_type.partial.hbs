@@ -1,0 +1,9 @@
+
+export class {{sanitizeClassName name}} {
+{{#each methods}}
+  {{> generate_method this}}
+{{/each}}
+{{#each properties}}
+  {{> generate_property this}}
+{{/each}}
+}

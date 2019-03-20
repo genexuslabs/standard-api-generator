@@ -1,0 +1,11 @@
+
+/**
+ * {{description}}
+ */
+{{#if static}}static {{/if}} get {{sanitizeName name}}(): {{mapType type}} {
+  notImplemented();
+  return null;
+}
+{{#unless readonly}}{{#if static}}static {{/if}} set {{sanitizeName name}}(value: {{mapType type}}) {
+  notImplemented();
+}{{/unless}}
