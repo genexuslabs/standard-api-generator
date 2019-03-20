@@ -71,11 +71,17 @@ function sanitizeClassName(name) {
   return cName.replace(/(\.|\s)/g, "_");
 }
 
+function privateMemberName(name) {
+  return `m_${sanitizeName(name)}`;
+}
+
 Handlebars.registerHelper("mapType", mapType);
 
 Handlebars.registerHelper("sanitizeName", sanitizeName);
 
 Handlebars.registerHelper("sanitizeClassName", sanitizeClassName);
+
+Handlebars.registerHelper("privateMemberName", privateMemberName);
 
 Handlebars.registerHelper("joinParameters", function(items, options) {
   if (!items) {
