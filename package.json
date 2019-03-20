@@ -4,7 +4,7 @@
   "description": "A CLI for generating GeneXus standard functions index.ts file from a definition file and a set of parameters",
   "main": "index.js",
   "scripts": {
-    "start": "node ./index.js -o ./test/options.json -m ./test/metadata.json",
+    "start": "node ./index.js -o ./test/options.json",
     "precommit": "pretty-quick --staged",
     "pretty-quick": "pretty-quick",
     "test": "jest --no-cache",

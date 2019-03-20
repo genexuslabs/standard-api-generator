@@ -1,1 +1,4 @@
-{}
+{
+    "metadataFilePath": "../../../out.json",
+    "outputFilePath": "out/not_implemented.ts"
+}

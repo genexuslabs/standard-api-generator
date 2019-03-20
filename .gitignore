@@ -1,6 +1,9 @@
 dist/
 coverage/
 
+# Directory for producing output files
+out/
+
 *~
 *.sw[mnpcod]
 *.log

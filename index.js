@@ -2,25 +2,38 @@
 const fs = require("fs");
 const cli = require("cli");
 const generate = require("./generator");
+const path = require("path");
 
 const parameters = cli.parse({
-  metadata: ["m", "Path to the metadata file.", "file", ""],
   options: ["o", "Path to the options file.", "file", ""]
 });
-
-if (!parameters.metadata) {
-  cli.error("You must specify an input metadata file to proceed.");
-  return;
-}
 
 if (!parameters.options) {
   cli.error("You must specify an options file to proceed.");
   return;
 }
 
-let metadata = JSON.parse(
-  fs.readFileSync(__dirname + "/" + parameters.metadata)
-);
-let options = JSON.parse(fs.readFileSync(__dirname + "/" + parameters.options));
+const options = JSON.parse(fs.readFileSync(absolutePath(parameters.options)));
 
-cli.output(generate(metadata, options));
+const metadataFilePath = absolutePath(options["metadataFilePath"]);
+const metadata = JSON.parse(fs.readFileSync(metadataFilePath));
+
+const generated = generate(metadata, options);
+
+writeToFile(options["outputFilePath"], generated);
+
+//////// Helper functions
+
+function absolutePath(relPath) {
+  if (path.isAbsolute(relPath)) {
+    return relPath;
+  } else {
+    return path.join(__dirname, relPath);
+  }
+}
+
+function writeToFile(fileRelPath, text) {
+  const outFilePath = absolutePath(fileRelPath);
+  fs.mkdirSync(path.dirname(outFilePath), { recursive: true });
+  fs.writeFileSync(outFilePath, text);
+}
