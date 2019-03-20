@@ -10,7 +10,7 @@ export class Numeric {
   /**
    * @return any
    */
-  static IsEmpty(self: any): any {
+  isEmpty(): any {
     notImplemented();
     return null;
   }

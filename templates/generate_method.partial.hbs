@@ -10,7 +10,7 @@
  * @return {{mapType returns}}
 {{/if}}
  */
-{{#if static}}static {{/if}}{{name}}({{#unless static}}self: any{{#if parameters.length}}, {{/if}}{{/unless}}{{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
+{{#if static}}static {{/if}}{{sanitizeName name}}({{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
   notImplemented();{{#if returns}}
   return null;{{/if}}
 }

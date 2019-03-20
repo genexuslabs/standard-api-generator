@@ -5,6 +5,13 @@
       "methods": [
         {
           "description": "",
+          "parameters": [],
+          "returns": "String",
+          "scopes": null,
+          "name": "ToString"
+        },
+        {
+          "description": "",
           "parameters": [
             {
               "accesstype": "in",

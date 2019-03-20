@@ -5,21 +5,25 @@
       "description": "",
       "methods": [
         {
-          "name": "AddMth",
+          "description": "",
           "parameters": [
             {
-              "name": "Value",
+              "accesstype": "in",
+              "description": "",
               "type": "Date",
-              "optional": false,
-              "description": ""
+              "name": "Value"
             },
             {
-              "name": "Months",
+              "accesstype": "in",
+              "description": "",
               "type": "Numeric",
-              "optional": false,
-              "description": ""
+              "name": "Months"
             }
-          ]
+          ],
+          "returns": "Date",
+          "scopes": [],
+          "static": true,
+          "name": "AddMth"
         }
       ],
       "properties": [],

@@ -5,13 +5,15 @@ function notImplemented() {
 }
 
 
-export class Core {
-  
-  /**
-   * @param Value
-   * @param Months
-   */
-  static AddMth(self: any, Value: Date, Months: number) {
-    notImplemented();
-  }
+// Type: Core
+
+/**
+ * @param value
+ * @param months
+ * @return Date
+ */
+export function addMth(value: Date, months: number): Date {
+  notImplemented();
+  return null;
 }
+// end Type

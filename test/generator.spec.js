@@ -1,5 +1,4 @@
 const generator = require("../generator");
-const options = require("./options.json");
 const fs = require("fs");
 
 const testCases = [
@@ -20,6 +19,8 @@ const testCases = [
 testCases.forEach((testCase) => {
   describe(testCase.description, () => {
     const metadata = require(`./${testCase.file_name}.json`);
+    const optionsFilePath = `./${testCase.file_name}.json`;
+    const options = fs.existsSync(optionsFilePath) ? require(optionsFilePath) : {};
     const expected = fs.readFileSync(`test/${testCase.file_name}.out.ts`, "utf8");
     const result = generator(metadata, options);
     it(`should work`, () => {

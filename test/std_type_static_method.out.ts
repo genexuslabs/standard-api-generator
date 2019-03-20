@@ -8,12 +8,20 @@ function notImplemented() {
 export class Date {
   
   /**
-   * @param Year
-   * @param Month
-   * @param Day
+   * @return any
+   */
+  toString(): any {
+    notImplemented();
+    return null;
+  }
+  
+  /**
+   * @param year
+   * @param month
+   * @param day
    * @return Date
    */
-  static New(Year: number, Month: number, Day: number): Date {
+  static new(year: number, month: number, day: number): Date {
     notImplemented();
     return null;
   }
