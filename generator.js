@@ -11,15 +11,20 @@ function generate(metadata, options) {
 }
 
 function readTemplateFile(fileName) {
-  return fs.readFileSync(`templates/${fileName}.hbs`, "utf8")
+  return fs.readFileSync(`templates/${fileName}.hbs`, "utf8");
 }
 
 function readPartialTemplateFile(partialName) {
-  return readTemplateFile(`${partialName}.partial`)
+  return readTemplateFile(`${partialName}.partial`);
 }
 
 function registerPartial(partialName) {
-  Handlebars.registerPartial(partialName, readPartialTemplateFile(partialName))
+  const partialContent = readPartialTemplateFile(partialName);
+  if (partialContent) {
+    Handlebars.registerPartial(partialName, partialContent);
+  } else {
+    throw `Could not read Handlebars partial file named ${partialName}`;
+  }
 }
 
 const template = Handlebars.compile(readTemplateFile("not_implemented.ts"));
@@ -27,6 +32,7 @@ const template = Handlebars.compile(readTemplateFile("not_implemented.ts"));
 registerPartial("generate_type");
 registerPartial("generate_method");
 registerPartial("generate_property");
+registerPartial("generate_standalone_function");
 
 const IndeterminateDataType = "any";
 const ObjectDataType = "any";
@@ -56,11 +62,13 @@ function mapType(sourceType) {
 }
 
 function sanitizeName(name) {
-  return name.replace(/\s/g, "_");
+  const cName = name.charAt(0).toLowerCase() + name.slice(1);
+  return cName.replace(/\s/g, "_");
 }
 
 function sanitizeClassName(name) {
-  return name.replace(/(\.|\s)/g, "_");
+  const cName = name.charAt(0).toUpperCase() + name.slice(1);
+  return cName.replace(/(\.|\s)/g, "_");
 }
 
 Handlebars.registerHelper("mapType", mapType);

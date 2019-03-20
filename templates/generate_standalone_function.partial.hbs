@@ -1,0 +1,16 @@
+
+/**
+{{#if description}}
+ * {{description}}
+{{/if}}
+{{#each parameters}}
+ * @param {{sanitizeName name}}
+{{/each}}
+{{#if returns}}
+ * @return {{mapType returns}}
+{{/if}}
+ */
+export function {{name}}({{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
+  notImplemented();{{#if returns}}
+  return null;{{/if}}
+}

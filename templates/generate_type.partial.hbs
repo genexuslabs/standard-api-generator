@@ -1,3 +1,4 @@
+{{#if generateClass}}
 
 export class {{sanitizeClassName name}} {
 {{#each methods}}
@@ -7,3 +8,11 @@ export class {{sanitizeClassName name}} {
   {{> generate_property this}}
 {{/each}}
 }
+{{else}}
+
+// Type: {{sanitizeClassName name}}
+{{#each methods}}
+{{> generate_standalone_function this}}
+{{/each}}
+// end Type
+{{/if}}

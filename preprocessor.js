@@ -30,6 +30,8 @@ function preprocess(metadata, options) {
         def.properties = def.properties.reduce(filterItems, []);
       }
 
+      def["generateClass"] = shouldGenerateClass(def);
+
       reducedDef.push(def);
       return reducedDef;
     }
@@ -70,6 +72,19 @@ function memberName(entry, member) {
   } else {
     return entry;
   }
+}
+
+function shouldGenerateClass(def) {
+  let genClass = false;
+  if (def.methods) {
+    genClass = def.methods.reduce((result, method) => {
+      return result || method.static;
+    }, false);
+  }
+  if (!genClass && def.properties) {
+    genClass = def.properties.length > 0;
+  }
+  return genClass;
 }
 
 module.exports = preprocess;
