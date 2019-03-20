@@ -1,7 +1,7 @@
 function preprocess(metadata, options) {
   /**
-   * TODO: Removes already implemented elements (options["implemented"])
-   * TODO: Removes ignored elements (options["ignored"])
+   * Removes already implemented elements (options["implemented"])
+   * Removes ignored elements (options["ignored"])
    * TODO: Merges overloaded methods into one with optional parameters
    * TODO: Renames methods that require disambiguation (options["disambiguated"])
    */
@@ -55,8 +55,13 @@ function getImplemented(options) {
 }
 
 function getIgnored(options) {
-  // TODO
-  return [];
+  let ignored = [];
+  if (options.ignored) {
+    for (let entryKey in options.ignored) {
+      ignored = ignored.concat( options.ignored[entryKey].map( item => memberName(entryKey, item)) );
+    }
+  }
+  return ignored;
 }
 
 function memberName(entry, member) {

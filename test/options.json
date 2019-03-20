@@ -27,5 +27,10 @@
 		"File": {
 			"path": "@genexus/web-standard-functions/dist/lib-esm/fs/file"
 		}
+    },
+
+    "ignored": {
+        "Core": ["AddMth", "AddYr"],
+        "Numeric": ["IsEmpty"]
     }
 }
