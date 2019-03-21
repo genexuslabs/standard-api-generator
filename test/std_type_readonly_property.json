@@ -1,0 +1,24 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [],
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "ApplicationDataPath"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "ExternalFilesPath"
+                }
+            ],
+            "name": "Directory"
+        }
+    ]
+}

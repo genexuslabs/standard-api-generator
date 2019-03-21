@@ -1,0 +1,17 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [],
+            "properties": [
+                {
+                    "description": "",
+                    "static": true,
+                    "type": "String",
+                    "name": "ApplicationDataPath"
+                }
+            ],
+            "name": "Directory"
+        }
+    ]
+}

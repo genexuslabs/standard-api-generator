@@ -1,0 +1,17 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [],
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Source"
+                }
+            ],
+            "name": "Directory"
+        }
+    ]
+}
