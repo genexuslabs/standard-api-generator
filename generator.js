@@ -1,6 +1,6 @@
 const Handlebars = require("handlebars");
 const fs = require("fs");
-const preprocess = require("./preprocessor");
+const {preprocess} = require("./preprocessor");
 
 function generate(metadata, options) {
   if (metadata.definitions) {

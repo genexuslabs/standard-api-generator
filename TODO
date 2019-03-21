@@ -1,4 +1,8 @@
-Write tests for properties (instance, static, readonly)
+
 Add documentation for options.json file
+
 Document output format
+
 Generate Angular generator's mappings
+
+Rename methods that require disambiguation

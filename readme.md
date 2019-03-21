@@ -2,7 +2,7 @@
 
 # GeneXus API Generator
 
-A CLI tool for automatically generating an index.js for GeneXus standard API
+A CLI tool for automatically generating the GeneXus standard API definition and the required mappings for the Angular generator.
 
 ## Getting Started
 
