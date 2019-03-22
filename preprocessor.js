@@ -1,9 +1,11 @@
+"use strict";
+
 function preprocess(metadata, options) {
   /**
    * Removes already implemented elements (options["implemented"])
    * Removes ignored elements (options["ignored"])
    * Merges overloaded methods into one with optional parameters
-   * TODO: Renames methods that require disambiguation (options["disambiguated"])
+   * Renames methods that require disambiguation (options["disambiguated"])
    */
   if (!metadata.definitions) {
     return metadata;
@@ -12,6 +14,7 @@ function preprocess(metadata, options) {
   metadata = removeImplementedAndIgnored(metadata, options);
   metadata = addGenerateClassInformation(metadata);
   metadata = mergeOverloadedMethods(metadata);
+  metadata = disambiguateElements(metadata, options);
 
   return metadata;
 }
@@ -94,7 +97,7 @@ function mergeMethodParameters(params1, params2) {
 
   let result = [];
   let commonCount = Math.min(params1.length, params2.length);
-  for (i = 0; i < commonCount; i++) {
+  for (let i = 0; i < commonCount; i++) {
     result.push(mergedParameter(params1[i], params2[i]));
   }
 
@@ -194,6 +197,53 @@ function shouldGenerateClass(def) {
     genClass = def.properties.length > 0;
   }
   return genClass;
+}
+
+function disambiguateElements(metadata, options) {
+  const disambiguations = getDisambiguated(options);
+  if (!disambiguations) {
+    return metadata
+  }
+
+  console.log(disambiguations);
+
+  metadata.definitions = metadata.definitions.map((def) => {
+    let entryName = def.name;
+    const disambiguateItem = function (item) {
+      let disambiguationName = memberName(entryName, item.name);
+      if (disambiguations[disambiguationName]) {
+        item.name = disambiguations[disambiguationName];
+      }
+      return item;
+    };
+
+    if (def.methods) {
+      def.methods = def.methods.map(disambiguateItem);
+    }
+    if (def.properties) {
+      def.properties = def.properties.map(disambiguateItem);
+    }
+
+    return def;
+  });
+  return metadata;
+}
+
+function getDisambiguated(options) {
+  if (!options["disambiguated"]) {
+    return null
+  }
+
+  let disambiguated = {};
+  for (let key in options.disambiguated) {
+    let items = options.disambiguated[key];
+    for (let item in items) {
+      let name = memberName(key, item);
+      let value = items[item];
+      disambiguated[name] = value;
+    }
+  }
+  return disambiguated;
 }
 
 module.exports = {
