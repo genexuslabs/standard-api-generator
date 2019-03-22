@@ -38,6 +38,10 @@ const testCases = [
   {
     "file_name": "std_type_readonly_property",
     "description": "standard type redonly properties (static & instance)"
+  },
+  {
+    "file_name": "disambiguated_method",
+    "description": "disambiguated method"
   }
 ];
 

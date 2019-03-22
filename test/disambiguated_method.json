@@ -1,0 +1,25 @@
+{
+  "definitions": [
+    {
+      "name": "Core",
+      "description": "",
+      "methods": [
+        {
+          "description": "",
+          "parameters": [
+            {
+              "accesstype": "in",
+              "description": "",
+              "type": "String",
+              "name": "Value"
+            }
+          ],
+          "returns": "String",
+          "scopes": null,
+          "static": true,
+          "name": "LTrim"
+        }
+      ]
+    }
+  ]
+}
