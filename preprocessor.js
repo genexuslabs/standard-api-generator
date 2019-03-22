@@ -220,9 +220,6 @@ function disambiguateElements(metadata, options) {
     if (def.methods) {
       def.methods = def.methods.map(disambiguateItem);
     }
-    if (def.properties) {
-      def.properties = def.properties.map(disambiguateItem);
-    }
 
     return def;
   });
