@@ -2,6 +2,7 @@
 const fs = require("fs");
 const cli = require("cli");
 const generateTypescriptAPI = require("./ts_api_generator");
+const generateAngularMetadata = require("./angular_metadata_generator");
 const {preprocess} = require("./preprocessor");
 const path = require("path");
 
@@ -29,7 +30,7 @@ if (notImplementedOutputFilePath) {
 
 const angularMetadataOutputFilePath = absolutePath(options["angularMappingsOutputFilePath"]);
 if (angularMetadataOutputFilePath) {
-  const generatedMappings = ""; //generateAngularMetadata(metadata, options);
+  const generatedMappings = generateAngularMetadata(metadata, options);
   writeToFile(angularMetadataOutputFilePath, generatedMappings);
 }
 

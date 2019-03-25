@@ -1,5 +1,10 @@
 const Handlebars = require("handlebars");
 const fs = require("fs");
+const {
+  sanitizeName,
+  sanitizeClassName
+} = require("./helpers");
+
 
 function generate(metadata, options) {
   if (metadata.definitions) {
@@ -57,16 +62,6 @@ function mapType(sourceType) {
   }
 
   return targetType;
-}
-
-function sanitizeName(name) {
-  const cName = name.charAt(0).toLowerCase() + name.slice(1);
-  return cName.replace(/(\s|\|)/g, "_");
-}
-
-function sanitizeClassName(name) {
-  const cName = name.charAt(0).toUpperCase() + name.slice(1);
-  return cName.replace(/(\.|\s)/g, "_");
 }
 
 function privateMemberName(name) {
