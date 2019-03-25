@@ -1,4 +1,45 @@
 {
-    "metadataFilePath": "../../../out.json",
-    "outputFilePath": "out/not_implemented.ts"
+    "metadataFilePath": "test/input_metadata.json",
+    "notImplementedOutputFilePath": "out/not_implemented.ts",
+    "angularMappingsOutputFilePath": "out/angular_metadata.json",
+    
+
+    "disambiguated": {
+        "Core": {
+            "Null": "isNullValue"
+        },
+        "TextSearch": {
+            "Add": "textSearch_add",
+            "Delete": "textSearch_delete",
+            "Find": "textSearch_find",
+            "Update": "textSearch_update"
+        },
+        "GeneXus.Client.ClientStorage": {
+            "Set": "setValue"
+        },
+        "GeneXus.Common.Analytics": {
+            "SetUserId": "setAnalyticsUserId"
+        },
+        "GeneXus.Common.Log": {
+            "Error": "logError"
+        },
+        "GeneXus.SD.Actions": {
+            "Delete": "deleteAction"
+        },
+        "GeneXus.SD.Media.PhotoLibrary": {
+            "Save": "savePhoto"
+        },
+        "MAPISession": {
+            "MarkAsRead": "mapiMarkAsRead"
+        },
+        "WApiApplicationData": {
+            "Value": "valueAtIndex"
+        }
+    },
+
+    "ignored": {
+        "Core": [
+            "Default"
+        ]
+    }
 }
