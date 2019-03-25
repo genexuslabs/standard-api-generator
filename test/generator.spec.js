@@ -1,4 +1,4 @@
-const generator = require("../generator");
+const generator = require("../ts_api_generator");
 const fs = require("fs");
 const path = require("path");
 

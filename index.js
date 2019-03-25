@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 const fs = require("fs");
 const cli = require("cli");
-const generate = require("./generator");
+const generate = require("./ts_api_generator");
 const path = require("path");
 
 const parameters = cli.parse({
@@ -20,7 +20,7 @@ const metadata = JSON.parse(fs.readFileSync(metadataFilePath));
 
 const generated = generate(metadata, options);
 
-writeToFile(options["outputFilePath"], generated);
+writeToFile(options["notImplementedOutputFilePath"], generated);
 
 //////// Helper functions
 
