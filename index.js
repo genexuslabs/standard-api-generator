@@ -1,7 +1,8 @@
 #! /usr/bin/env node
 const fs = require("fs");
 const cli = require("cli");
-const generate = require("./ts_api_generator");
+const generateTypescriptAPI = require("./ts_api_generator");
+const {preprocess} = require("./preprocessor");
 const path = require("path");
 
 const parameters = cli.parse({
@@ -16,11 +17,21 @@ if (!parameters.options) {
 const options = JSON.parse(fs.readFileSync(absolutePath(parameters.options)));
 
 const metadataFilePath = absolutePath(options["metadataFilePath"]);
-const metadata = JSON.parse(fs.readFileSync(metadataFilePath));
+const rawMetadata = JSON.parse(fs.readFileSync(metadataFilePath));
 
-const generated = generate(metadata, options);
+const metadata = preprocess(rawMetadata, options);
 
-writeToFile(options["notImplementedOutputFilePath"], generated);
+const notImplementedOutputFilePath = absolutePath(options["notImplementedOutputFilePath"]);
+if (notImplementedOutputFilePath) {
+  const generatedTypescript = generateTypescriptAPI(metadata, options);
+  writeToFile(notImplementedOutputFilePath, generatedTypescript);
+}
+
+const angularMetadataOutputFilePath = absolutePath(options["angularMappingsOutputFilePath"]);
+if (angularMetadataOutputFilePath) {
+  const generatedMappings = ""; //generateAngularMetadata(metadata, options);
+  writeToFile(angularMetadataOutputFilePath, generatedMappings);
+}
 
 //////// Helper functions
 

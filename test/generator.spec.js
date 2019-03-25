@@ -1,6 +1,9 @@
+"use strict";
+
 const generator = require("../ts_api_generator");
 const fs = require("fs");
 const path = require("path");
+const {preprocess} = require("../preprocessor");
 
 const testCases = [
   {
@@ -47,9 +50,10 @@ const testCases = [
 
 testCases.forEach((testCase) => {
   describe(testCase.description, () => {
-    const metadata = require(`./${testCase.file_name}.json`);
+    const rawMetadata = require(`./${testCase.file_name}.json`);
     const optionsFilePath = `./${testCase.file_name}.options.json`;
     const options = fs.existsSync(path.join(__dirname, optionsFilePath)) ? require(optionsFilePath) : {};
+    const metadata = preprocess(rawMetadata, options);
     const expected = fs.readFileSync(`test/${testCase.file_name}.out.ts`, "utf8");
     const result = generator(metadata, options);
     it(`should work`, () => {
