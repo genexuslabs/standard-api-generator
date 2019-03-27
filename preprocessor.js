@@ -30,7 +30,7 @@ function preprocessForTypescriptAPI(metadata, options) {
 
   metadata = removeImplemented(metadata, options);
   metadata = preprocessCommon(metadata, options);
-  
+
   return metadata;
 }
 
@@ -60,7 +60,8 @@ function removeIgnored(metadata, options) {
 }
 
 function removeUnwantedItems(metadata, doNotGenerate) {
-  metadata["definitions"] = metadata.definitions.reduce((reducedDef, def) => {
+  let resultMetadata = {};
+  resultMetadata["definitions"] = metadata.definitions.reduce((reducedDef, def) => {
     const entryName = def.name;
     if (doNotGenerate.includes(entryName)) {
       return reducedDef;
@@ -74,59 +75,65 @@ function removeUnwantedItems(metadata, doNotGenerate) {
         }
       };
 
+      let resultDef = { ...def };
+
       if (def.methods) {
-        def.methods = def.methods.reduce(filterItems, []);
+        resultDef.methods = def.methods.reduce(filterItems, []);
       }
       if (def.properties) {
-        def.properties = def.properties.reduce(filterItems, []);
+        resultDef.properties = def.properties.reduce(filterItems, []);
       }
 
-      reducedDef.push(def);
+      reducedDef.push(resultDef);
       return reducedDef;
     }
   }, []);
-  return metadata;
+  return resultMetadata;
 }
 
 function addImplementedInfo(metadata, options) {
   const impInfo = getImplementedInfo(options);
 
-  console.log(impInfo);
+  let resultMetadata = {};
+  resultMetadata.definitions = metadata.definitions.map((def) => {
+    let resultDef = { ...def };
 
-  metadata.definitions = metadata.definitions.map((def) => {
     const entryName = def.name;
     if (impInfo[entryName]) {
-      def["implementationPath"] = impInfo[entryName].path;
+      resultDef["implementationPath"] = impInfo[entryName].path;
     }
 
     if (def.methods) {
-      def.methods = def.methods.map((meth) => {
-        let mName = memberName(entryName, meth.name)
-        console.log(mName);
+      resultDef.methods = def.methods.map((meth) => {
+        let resultMeth = { ...meth };
+        let mName = memberName(entryName, meth.name);
         if (impInfo[mName]) {
-          meth["implementationPath"] = impInfo[mName].path;
-          meth["implementationAlias"] = impInfo[mName].alias;
+          resultMeth["implementationPath"] = impInfo[mName].path;
+          resultMeth["implementationAlias"] = impInfo[mName].alias;
         }
-        return meth;
+        return resultMeth;
       });
     }
 
-    return def;
+    return resultDef;
   });
 
-  return metadata;
+  return resultMetadata;
 }
 
 function addGenerateClassInformation(metadata) {
-  metadata["definitions"] = metadata.definitions.map((def) => {
-    def["generateClass"] = shouldGenerateClass(def);
-    return def;
+  let resultMetadata = {};
+  resultMetadata.definitions = metadata.definitions.map((def) => {
+    let resultDef = { ...def };
+    resultDef["generateClass"] = shouldGenerateClass(def);
+    return resultDef;
   });
-  return metadata;
+  return resultMetadata;
 }
 
 function mergeOverloadedMethods(metadata) {
-  metadata["definitions"] = metadata.definitions.map((def) => {
+  let resultMetadata = {};
+  resultMetadata.definitions = metadata.definitions.map((def) => {
     if (def.methods) {
       const mergeOverloads = function (currentMethods, method) {
         let existing = currentMethods.find((current) => { return current.name == method.name && current.static == method.static });
@@ -135,22 +142,27 @@ function mergeOverloadedMethods(metadata) {
           existing.parameters = params;
         }
         else {
-          currentMethods.push(method);
+          currentMethods.push({ ...method });
         }
         return currentMethods;
       }
 
-      def.methods = def.methods.reduce(mergeOverloads, []);
+      let resultDef = { ...def };
+      resultDef.methods = def.methods.reduce(mergeOverloads, []);
+      return resultDef;
     }
-    return def;
+    else {
+      return def;
+    }
   });
-  return metadata;
+  return resultMetadata;
 }
 
 function mergeMethodParameters(params1, params2) {
   const makeParameterOptional = function (p) {
-    p["optional"] = true;
-    return p;
+    let resultParam = { ...p };
+    resultParam["optional"] = true;
+    return resultParam;
   };
 
   if (!params1) {
@@ -179,10 +191,8 @@ function mergeMethodParameters(params1, params2) {
 }
 
 function mergedParameter(par1, par2) {
-  let result = {};
-  result["name"] = par1.name;
+  let result = { ...par1 };
   result["type"] = mergeParameterType(par1.type, par2.type);
-  result["description"] = par1.description;
   result["accesstype"] = mergeAccessType(par1.accessType, par2.accessType);
   result["optional"] = boolFromValue(par1.optional) || boolFromValue(par2.optional);
   return result;
@@ -246,7 +256,6 @@ function getImplementedInfo(options) {
           };
         }
       } else {
-        let path = 
         implemented[entryKey] = {
           path: options.implemented[entryKey].path,
         };
@@ -294,23 +303,31 @@ function disambiguateElements(metadata, options) {
     return metadata
   }
 
-  metadata.definitions = metadata.definitions.map((def) => {
+  let resultMetadata = { ...metadata };
+  resultMetadata.definitions = metadata.definitions.map((def) => {
     let entryName = def.name;
     const disambiguateItem = function (item) {
       let disambiguationName = memberName(entryName, item.name);
       if (disambiguations[disambiguationName]) {
-        item.name = disambiguations[disambiguationName];
+        let resultItem = { ...item };
+        resultItem.name = disambiguations[disambiguationName];
+        return resultItem;
       }
-      return item;
+      else {
+        return item;
+      }
     };
 
     if (def.methods) {
-      def.methods = def.methods.map(disambiguateItem);
+      let resultDef = { ...def };
+      resultDef.methods = def.methods.map(disambiguateItem);
+      return resultDef;
     }
-
-    return def;
+    else {
+      return def;
+    }
   });
-  return metadata;
+  return resultMetadata;
 }
 
 function getDisambiguated(options) {

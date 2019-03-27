@@ -2,8 +2,19 @@
     "metadataFilePath": "test/input_metadata.json",
     "notImplementedOutputFilePath": "out/not_implemented.ts",
     "angularMappingsOutputFilePath": "out/angular_metadata.json",
-    
 
+
+    "implemented": {
+        "Core": {
+			"members": {
+				"LTrim": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/text/ltrim",
+					"name": "ltrim"
+				}
+			}
+        }
+    },
+    
     "disambiguated": {
         "Core": {
             "Null": "isNullValue"

@@ -31,9 +31,7 @@ if (notImplementedOutputFilePath) {
   writeToFile(notImplementedOutputFilePath, generatedTypescript);
 }
 
-// TODO: should not read metadata again, but preprocessForTypescriptAPI has side effects and modifies rawMetadata
-const rawMetadata2 = JSON.parse(fs.readFileSync(metadataFilePath));
-const mappingsMetadata = preprocessForAngularMetadata(rawMetadata2, options);
+const mappingsMetadata = preprocessForAngularMetadata(rawMetadata, options);
 
 const angularMetadataOutputFilePath = absolutePath(options["angularMappingsOutputFilePath"]);
 if (angularMetadataOutputFilePath) {
