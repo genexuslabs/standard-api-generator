@@ -12,11 +12,12 @@ function generate(metadata, options) {
                 "name": def.name,
                 "generatesClass": def.generateClass,
                 "externalName": sanitizeClassName(def.name),
-                "externalModuleName": "",    // TODO
+                "externalModuleName": def.implementationPath,
                 "methods": def.methods ? def.methods.map((meth) => {
                     return {
-                        "name": meth.name,
-                        "externalName": sanitizeName(meth.name)
+                        "name": meth.implementationAlias ? meth.implementationAlias : meth.name,
+                        "externalName": sanitizeName(meth.name),
+                        "externalModuleName": meth.implementationPath
                     }
                 }) : []
             }

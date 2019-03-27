@@ -1,9 +1,9 @@
 "use strict";
 
-function preprocess(metadata, options) {
+function preprocessCommon(metadata, options) {
   /**
-   * Removes already implemented elements (options["implemented"])
    * Removes ignored elements (options["ignored"])
+   * Adds "generateClass" information
    * Merges overloaded methods into one with optional parameters
    * Renames methods that require disambiguation (options["disambiguated"])
    */
@@ -11,7 +11,7 @@ function preprocess(metadata, options) {
     return metadata;
   }
 
-  metadata = removeImplementedAndIgnored(metadata, options);
+  metadata = removeIgnored(metadata, options);
   metadata = addGenerateClassInformation(metadata);
   metadata = mergeOverloadedMethods(metadata);
   metadata = disambiguateElements(metadata, options);
@@ -19,11 +19,47 @@ function preprocess(metadata, options) {
   return metadata;
 }
 
-function removeImplementedAndIgnored(metadata, options) {
-  const implemented = getImplemented(options);
-  const ignored = getIgnored(options);
-  const doNotGenerate = implemented.concat(ignored);
+function preprocessForTypescriptAPI(metadata, options) {
+  /**
+   * Removes already implemented elements (options["implemented"])
+   * Performs all common preprocessor functions
+   */
+  if (!metadata.definitions) {
+    return metadata;
+  }
 
+  metadata = removeImplemented(metadata, options);
+  metadata = preprocessCommon(metadata, options);
+  
+  return metadata;
+}
+
+function preprocessForAngularMetadata(metadata, options) {
+  /**
+   * Adds implemented methods' information
+   * Performs all common preprocessor functions
+   */
+  if (!metadata.definitions) {
+    return metadata;
+  }
+
+  metadata = addImplementedInfo(metadata, options);
+  metadata = preprocessCommon(metadata, options);
+
+  return metadata;
+}
+
+function removeImplemented(metadata, options) {
+  const doNotGenerate = getImplemented(options);
+  return removeUnwantedItems(metadata, doNotGenerate);
+}
+
+function removeIgnored(metadata, options) {
+  const doNotGenerate = getIgnored(options);
+  return removeUnwantedItems(metadata, doNotGenerate);
+}
+
+function removeUnwantedItems(metadata, doNotGenerate) {
   metadata["definitions"] = metadata.definitions.reduce((reducedDef, def) => {
     const entryName = def.name;
     if (doNotGenerate.includes(entryName)) {
@@ -49,6 +85,35 @@ function removeImplementedAndIgnored(metadata, options) {
       return reducedDef;
     }
   }, []);
+  return metadata;
+}
+
+function addImplementedInfo(metadata, options) {
+  const impInfo = getImplementedInfo(options);
+
+  console.log(impInfo);
+
+  metadata.definitions = metadata.definitions.map((def) => {
+    const entryName = def.name;
+    if (impInfo[entryName]) {
+      def["implementationPath"] = impInfo[entryName].path;
+    }
+
+    if (def.methods) {
+      def.methods = def.methods.map((meth) => {
+        let mName = memberName(entryName, meth.name)
+        console.log(mName);
+        if (impInfo[mName]) {
+          meth["implementationPath"] = impInfo[mName].path;
+          meth["implementationAlias"] = impInfo[mName].alias;
+        }
+        return meth;
+      });
+    }
+
+    return def;
+  });
+
   return metadata;
 }
 
@@ -168,6 +233,30 @@ function getImplemented(options) {
   return implemented;
 }
 
+function getImplementedInfo(options) {
+  let implemented = {};
+  if (options.implemented) {
+    for (let entryKey in options.implemented) {
+      let members = options.implemented[entryKey].members;
+      if (members) {
+        for (let memberKey in members) {
+          implemented[memberName(entryKey, memberKey)] = {
+            path: members[memberKey].path,
+            alias: members[memberKey].alias
+          };
+        }
+      } else {
+        let path = 
+        implemented[entryKey] = {
+          path: options.implemented[entryKey].path,
+        };
+      }
+    }
+
+  }
+  return implemented;
+}
+
 function getIgnored(options) {
   let ignored = [];
   if (options.ignored) {
@@ -204,8 +293,6 @@ function disambiguateElements(metadata, options) {
   if (!disambiguations) {
     return metadata
   }
-
-  console.log(disambiguations);
 
   metadata.definitions = metadata.definitions.map((def) => {
     let entryName = def.name;
@@ -244,6 +331,7 @@ function getDisambiguated(options) {
 }
 
 module.exports = {
-  preprocess: preprocess,
+  preprocessForTypescriptAPI: preprocessForTypescriptAPI,
+  preprocessForAngularMetadata: preprocessForAngularMetadata,
   mergeOverloadedMethods: mergeOverloadedMethods
 };

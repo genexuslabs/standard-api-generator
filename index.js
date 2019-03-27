@@ -3,8 +3,11 @@ const fs = require("fs");
 const cli = require("cli");
 const generateTypescriptAPI = require("./ts_api_generator");
 const generateAngularMetadata = require("./angular_metadata_generator");
-const {preprocess} = require("./preprocessor");
 const path = require("path");
+const {
+  preprocessForTypescriptAPI,
+  preprocessForAngularMetadata
+} = require("./preprocessor");
 
 const parameters = cli.parse({
   options: ["o", "Path to the options file.", "file", ""]
@@ -20,17 +23,21 @@ const options = JSON.parse(fs.readFileSync(absolutePath(parameters.options)));
 const metadataFilePath = absolutePath(options["metadataFilePath"]);
 const rawMetadata = JSON.parse(fs.readFileSync(metadataFilePath));
 
-const metadata = preprocess(rawMetadata, options);
+const tsAPIMetadata = preprocessForTypescriptAPI(rawMetadata, options);
 
 const notImplementedOutputFilePath = absolutePath(options["notImplementedOutputFilePath"]);
 if (notImplementedOutputFilePath) {
-  const generatedTypescript = generateTypescriptAPI(metadata, options);
+  const generatedTypescript = generateTypescriptAPI(tsAPIMetadata, options);
   writeToFile(notImplementedOutputFilePath, generatedTypescript);
 }
 
+// TODO: should not read metadata again, but preprocessForTypescriptAPI has side effects and modifies rawMetadata
+const rawMetadata2 = JSON.parse(fs.readFileSync(metadataFilePath));
+const mappingsMetadata = preprocessForAngularMetadata(rawMetadata2, options);
+
 const angularMetadataOutputFilePath = absolutePath(options["angularMappingsOutputFilePath"]);
 if (angularMetadataOutputFilePath) {
-  const generatedMappings = generateAngularMetadata(metadata, options);
+  const generatedMappings = generateAngularMetadata(mappingsMetadata, options);
   writeToFile(angularMetadataOutputFilePath, generatedMappings);
 }
 
