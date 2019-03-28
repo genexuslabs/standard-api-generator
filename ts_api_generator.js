@@ -65,7 +65,7 @@ function mapType(sourceType) {
 }
 
 function privateMemberName(name) {
-  return `m_${sanitizeName(name)}`;
+  return `m${sanitizeName(name)}`;
 }
 
 Handlebars.registerHelper("mapType", mapType);

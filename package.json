@@ -9,8 +9,9 @@
     "pretty-quick": "pretty-quick",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "transpile": "tsc -w c:\\out.ts",
-    "validate": "npm run test"
+    "transpile": "tsc ./out/not_implemented.ts",
+    "validate": "npm run test",
+    "lint": "tslint --project tsconfig.json -t codeframe out/*.ts"
   },
   "keywords": [
     "genexus",
@@ -29,7 +30,10 @@
     "jest-cli": "^24.4.0",
     "prettier": "^1.16.4",
     "pretty-quick": "^1.10.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1"
   },
   "jest": {
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?)$",

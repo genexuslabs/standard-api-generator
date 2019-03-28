@@ -20,10 +20,11 @@
             "Null": "isNullValue"
         },
         "TextSearch": {
-            "Add": "textSearch_add",
-            "Delete": "textSearch_delete",
-            "Find": "textSearch_find",
-            "Update": "textSearch_update"
+            "Add": "textSearchAdd",
+            "Delete": "textSearchDelete",
+            "Find": "textSearchFind",
+            "Update": "textSearchUpdate",
+            "HTMLPreview": "htmlPreview"
         },
         "GeneXus.Client.ClientStorage": {
             "Set": "setValue"
