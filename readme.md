@@ -11,6 +11,10 @@ npm install
 npm start
 ```
 
+## Configuration
+
+See [options.json file format documentation](doc/options-file-format.md).
+
 ## Running the tests
 
 To run the unit tests for the custom elements, run:
