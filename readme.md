@@ -11,9 +11,13 @@ npm install
 npm start
 ```
 
-## Configuration
+## Configuration, input and output
 
 See [options.json file format documentation](doc/options-file-format.md).
+
+See [metadata.json documentation](doc/metadata-file-format.md) for inout metadata.
+
+See [generated output format](doc/output-format.md).
 
 ## Running the tests
 
