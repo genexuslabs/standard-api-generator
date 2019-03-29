@@ -8,9 +8,9 @@ function notImplemented() {
 export class Numeric {
   
   /**
-   * @return any
+   * @return boolean
    */
-  isEmpty(): any {
+  isEmpty(): boolean {
     notImplemented();
     return null;
   }

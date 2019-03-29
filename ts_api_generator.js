@@ -47,6 +47,7 @@ const TypeMappings = {
   "Date/DateTime": "Date",
   DateTime: "Date",
   Numeric: "number",
+  Boolean: "boolean",
   Object: ObjectDataType
 };
 
