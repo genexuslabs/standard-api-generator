@@ -95,7 +95,7 @@ Some methods and properties may not have an implementation in a given platform. 
 ```json
 {
     "ignored": [
-		"Core": ["metodo1", "metodo2"....]
+		"Core": ["metodo1", "metodo2"]
     ]
 }
 ```
