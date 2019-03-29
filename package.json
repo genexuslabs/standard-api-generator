@@ -9,9 +9,9 @@
     "pretty-quick": "pretty-quick",
     "test": "jest --no-cache",
     "test.watch": "jest --watch --no-cache",
-    "transpile": "tsc ./out/not_implemented.ts",
-    "validate": "npm run test",
-    "lint": "tslint --project tsconfig.json -t codeframe out/*.ts"
+    "transpile-output": "tsc -t es6 ./out/not_implemented.ts",
+    "validate": "npm run test && npm start && npm run lint-output",
+    "lint-output": "tslint --project tsconfig.json -t codeframe out/*.ts"
   },
   "keywords": [
     "genexus",
