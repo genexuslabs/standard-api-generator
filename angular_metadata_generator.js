@@ -6,20 +6,36 @@ const {
 } = require("./helpers");
 
 function generate(metadata, options) {
+    let defaultImplementationPath = undefined;
+    if (options.angularMappings) {
+        defaultImplementationPath = options.angularMappings.defaultModulesPath
+    }
+
     if (metadata.definitions) {
         const output = metadata.definitions.map((def) => {
+            const genClass = def.generateClass;
+            let impPath = undefined;
+            if (genClass) {
+                impPath = def.implementationPath ? def.implementationPath : defaultImplementationPath;
+            }
+
             return {
                 "name": def.name,
-                "generatesClass": def.generateClass,
+                "generatesClass": genClass,
                 "externalName": sanitizeClassName(def.name),
-                "externalModuleName": def.implementationPath,
+                "externalModuleName": impPath,
                 "methods": def.methods ? def.methods.map((meth) => {
-                    return {
-                        "name": meth.implementationAlias ? meth.implementationAlias : meth.name,
-                        "externalName": sanitizeName(meth.name),
-                        "externalModuleName": meth.implementationPath
+                    let methImpClass = undefined;
+                    if (!genClass) {
+                        methImpClass = meth.implementationPath ? meth.implementationPath : defaultImplementationPath;
                     }
-                }) : []
+
+                    return {
+                        "name": meth.name,
+                        "externalName": meth.implementationAlias ? meth.implementationAlias : sanitizeName(meth.name),
+                        "externalModuleName": methImpClass
+                    }
+                }) : undefined
             }
         });
         return JSON.stringify({ "modules": output });

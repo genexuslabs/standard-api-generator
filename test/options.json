@@ -2,7 +2,10 @@
     "metadataFilePath": "test/input_metadata.json",
     "notImplementedOutputFilePath": "out/not_implemented.ts",
     "angularMappingsOutputFilePath": "out/angular_metadata.json",
-
+    
+    "angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+    },
 
     "implemented": {
         "Core": {

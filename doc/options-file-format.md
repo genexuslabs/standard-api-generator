@@ -39,6 +39,22 @@ These files are indicated with "notImplementedOutputFilePath" and "angularMappin
 }
 ```
 
+### Angular mappings settings
+
+The section "angularMappings" contains settings required for producing the correct Angular mappings output.
+
+#### Modules default path
+
+Indicates the path to the not-implemented functions.
+
+```json
+{
+	"angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+    }
+}
+```
+
 ### Already implemented types and functions
 
 Those types and functions that already have an implementations should be declared in the "implemented" section.

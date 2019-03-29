@@ -1,5 +1,2 @@
 
 Write tests for Angular generator's mappings
-
-Generar siempre el externalModuleName en la metadata de Angular, que el valor default lo saque de alguna entrada del archivo options.json
-
