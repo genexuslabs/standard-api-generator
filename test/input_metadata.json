@@ -5152,6 +5152,14 @@
                     "name": "Truncate"
                 }
             ],
+            "properties": [
+                {
+                    "description": "Set automatic numbering on\/off",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "name": "Autonumber"
+                }
+            ],
             "name": "Numeric"
         },
         {
@@ -5508,6 +5516,14 @@
                     "name": "HTMLClean"
                 }
             ],
+            "properties": [
+                {
+                    "description": "National language support",
+                    "readonly": false,
+                    "type": "Combo",
+                    "name": "Enable national language support"
+                }
+            ],
             "name": "Character"
         },
         {
@@ -5732,6 +5748,44 @@
                     "returns": "Boolean",
                     "scopes": null,
                     "name": "IsEmpty"
+                }
+            ],
+            "properties": [
+                {
+                    "description": "Image Name",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "ImageName"
+                },
+                {
+                    "description": "Image Type",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "ImageType"
+                },
+                {
+                    "description": "Image URI",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "ImageURI"
+                },
+                {
+                    "description": "Image Width",
+                    "readonly": false,
+                    "type": "Integer",
+                    "name": "ImageWidth"
+                },
+                {
+                    "description": "Image Height",
+                    "readonly": false,
+                    "type": "Integer",
+                    "name": "ImageHeight"
+                },
+                {
+                    "description": "File Size",
+                    "readonly": false,
+                    "type": "Integer",
+                    "name": "FileSize"
                 }
             ],
             "name": "Image"
@@ -6081,6 +6135,14 @@
                     "returns": "String",
                     "scopes": null,
                     "name": "HTMLClean"
+                }
+            ],
+            "properties": [
+                {
+                    "description": "National language support",
+                    "readonly": false,
+                    "type": "Combo",
+                    "name": "Enable national language support"
                 }
             ],
             "name": "LongVarchar"
@@ -9924,6 +9986,12 @@
                     "readonly": false,
                     "type": "WSAddressing",
                     "name": "WSAddressing"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "WSSecurity",
+                    "name": "WSSecurity"
                 }
             ],
             "name": "Location"
@@ -10238,6 +10306,26 @@
         },
         {
             "description": "",
+            "properties": [
+                {
+                    "description": "File type",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "FileType"
+                },
+                {
+                    "description": "File type attribute",
+                    "readonly": false,
+                    "type": "Custom",
+                    "name": "FileTypeAttribute"
+                },
+                {
+                    "description": "File name attribute",
+                    "readonly": false,
+                    "type": "Custom",
+                    "name": "FileNameAttribute"
+                }
+            ],
             "name": "Blob"
         },
         {
@@ -10787,6 +10875,14 @@
                     "returns": "Boolean",
                     "scopes": null,
                     "name": "IsMatch"
+                }
+            ],
+            "properties": [
+                {
+                    "description": "Set Autogenerate for Guid",
+                    "readonly": false,
+                    "type": "Boolean",
+                    "name": "Autogenerate Guid"
                 }
             ],
             "name": "GUID"
@@ -16712,6 +16808,26 @@
                     "name": "IsEmpty"
                 }
             ],
+            "properties": [
+                {
+                    "description": "Video Name",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "VideoName"
+                },
+                {
+                    "description": "Video Type",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "VideoType"
+                },
+                {
+                    "description": "Video URI",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "VideoURI"
+                }
+            ],
             "name": "Video"
         },
         {
@@ -16737,6 +16853,26 @@
                     "returns": "Boolean",
                     "scopes": null,
                     "name": "IsEmpty"
+                }
+            ],
+            "properties": [
+                {
+                    "description": "Audio Name",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "AudioName"
+                },
+                {
+                    "description": "Audio Type",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "AudioType"
+                },
+                {
+                    "description": "Audio URI",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "AudioURI"
                 }
             ],
             "name": "Audio"
@@ -18374,6 +18510,159 @@
                 }
             ],
             "name": "WSAddressingEndPoint"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "WSSignature",
+                    "name": "Signature"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "WSEncryption",
+                    "name": "Encryption"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "BINARY_SECURITY_TOKEN"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "ISSUER_SERIAL"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "X509_KEY_IDENTIFIER"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "SKI_KEY_IDENTIFIER"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "THUMBPRINT_IDENTIFIER"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Numeric",
+                    "name": "KEY_VALUE"
+                }
+            ],
+            "name": "WSSecurity"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "WSSecurityKeyStore",
+                    "name": "Keystore"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Alias"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "Numeric",
+                    "name": "keyIdentifierType"
+                }
+            ],
+            "name": "WSSignature"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "WSSecurityKeyStore",
+                    "name": "Keystore"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Alias"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "Numeric",
+                    "name": "keyIdentifierType"
+                }
+            ],
+            "name": "WSEncryption"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Type"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Password"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Source"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "JKS"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "JCEKS"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "PKCS11"
+                }
+            ],
+            "name": "WSSecurityKeyStore"
         },
         {
             "description": "",
@@ -23736,6 +24025,42 @@
                 }
             ],
             "name": "GeneXus.SD.CardScanner"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "File type",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "FileType"
+                },
+                {
+                    "description": "File Name",
+                    "readonly": true,
+                    "type": "String",
+                    "name": "FileName"
+                },
+                {
+                    "description": "File URI",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "FileURI"
+                }
+            ],
+            "name": "BlobFile"
+        },
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "National language support",
+                    "readonly": false,
+                    "type": "Combo",
+                    "name": "Enable national language support"
+                }
+            ],
+            "name": "VarChar"
         }
     ]
 }
