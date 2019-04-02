@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 const fs = require("fs");
 const cli = require("cli");
-const generateTypescriptAPI = require("./ts_api_generator");
-const generateAngularMetadata = require("./angular_metadata_generator");
+const generateTypescriptAPI = require("./src/ts_api_generator");
+const generateAngularMetadata = require("./src/angular_metadata_generator");
 const path = require("path");
 const {
   preprocessForTypescriptAPI,
   preprocessForAngularMetadata
-} = require("./preprocessor");
+} = require("./src/preprocessor");
 
 const parameters = cli.parse({
   options: ["o", "Path to the options file.", "file", ""]

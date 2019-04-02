@@ -1,6 +1,6 @@
 "use strict";
 
-const { mergeOverloadedMethods } = require("../preprocessor");
+const { mergeOverloadedMethods } = require("../src/preprocessor");
 
 describe('definition with no methods', () => {
   const metadata = createDefinition('[]');
