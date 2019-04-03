@@ -5,6 +5,8 @@ const fs = require("fs");
 const path = require("path");
 const {preprocessForTypescriptAPI} = require("../src/preprocessor");
 
+const testCasesBaseDirectory = "ts-api-generator";
+
 const testCases = [
   {
     "file_name": "std_func",
@@ -50,11 +52,11 @@ const testCases = [
 
 testCases.forEach((testCase) => {
   describe(testCase.description, () => {
-    const rawMetadata = require(`./ts-api-generator/${testCase.file_name}.json`);
-    const optionsFilePath = `./ts-api-generator/${testCase.file_name}.options.json`;
+    const rawMetadata = require(`./${testCasesBaseDirectory}/${testCase.file_name}.json`);
+    const optionsFilePath = `./${testCasesBaseDirectory}/${testCase.file_name}.options.json`;
     const options = fs.existsSync(path.join(__dirname, optionsFilePath)) ? require(optionsFilePath) : {};
     const metadata = preprocessForTypescriptAPI(rawMetadata, options);
-    const expected = fs.readFileSync(`test/ts-api-generator/${testCase.file_name}.out.ts`, "utf8");
+    const expected = fs.readFileSync(`test/${testCasesBaseDirectory}/${testCase.file_name}.out.ts`, "utf8");
     const result = generator(metadata, options);
     it(`should work`, () => {
       expect(result).toEqual(expected);
