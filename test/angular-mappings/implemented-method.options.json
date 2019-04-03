@@ -1,0 +1,16 @@
+{
+    "angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+    },
+
+    "implemented": {
+        "Boolean": {
+			"members": {
+				"IsEmpty": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/bool/isempty",
+					"name": "isEmpty"
+				}
+			}
+        }
+    }
+}

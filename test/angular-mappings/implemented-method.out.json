@@ -1,0 +1,17 @@
+{
+    "modules": [
+        {
+            "name": "Boolean",
+            "generatesClass": true,
+            "externalName": "Boolean",
+            "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/not-implemented",
+            "methods": [
+                {
+                    "name": "IsEmpty",
+                    "externalName": "isEmpty",
+                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/bool/isempty"
+                }
+            ]
+        }
+    ]
+}
