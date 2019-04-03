@@ -25,11 +25,7 @@ function generate(metadata, options) {
                 "externalName": sanitizeClassName(def.name),
                 "externalModuleName": impPath,
                 "methods": def.methods ? def.methods.map((meth) => {
-                    let methImpClass = undefined;
-                    if (!genClass) {
-                        methImpClass = meth.implementationPath ? meth.implementationPath : defaultImplementationPath;
-                    }
-
+                    let methImpClass = meth.implementationPath ? meth.implementationPath : defaultImplementationPath;
                     return {
                         "name": meth.name,
                         "externalName": meth.implementationAlias ? meth.implementationAlias : sanitizeName(meth.name),
