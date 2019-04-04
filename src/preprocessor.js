@@ -270,13 +270,19 @@ function getIgnored(options) {
   let ignored = [];
   if (options.ignored) {
     for (let entryKey in options.ignored) {
-      ignored = ignored.concat(options.ignored[entryKey].map(item => memberName(entryKey, item)));
+      const entryValue = options.ignored[entryKey];
+      if (entryValue === "all") {
+        ignored = ignored.concat(memberName(entryKey));
+      }
+      else {
+        ignored = ignored.concat(entryValue.map(item => memberName(entryKey, item)));
+      }
     }
   }
   return ignored;
 }
 
-function memberName(entry, member) {
+function memberName(entry, member = undefined) {
   if (member) {
     return `${entry}::${member}`;
   } else {

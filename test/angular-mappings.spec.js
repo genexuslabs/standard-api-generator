@@ -15,6 +15,10 @@ const testCases = [
     {
         "file_name": "implemented-method",
         "description": "Already implemented method"
+    },
+    {
+        "file_name": "ignored-type",
+        "description": "Ignored type"
     }
 ];
 

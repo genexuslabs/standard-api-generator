@@ -47,6 +47,10 @@ const testCases = [
   {
     "file_name": "disambiguated_method",
     "description": "disambiguated method"
+  },
+  {
+      "file_name": "ignored_type",
+      "description": "Ignored type"
   }
 ];
 
