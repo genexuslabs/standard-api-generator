@@ -1,0 +1,11 @@
+{
+  "angularMappings": {
+    "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+  },
+
+  "implemented": {
+    "Boolean": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/types/boolean"
+    }
+  }
+}

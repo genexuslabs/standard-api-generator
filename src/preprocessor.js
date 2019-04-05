@@ -61,33 +61,36 @@ function removeIgnored(metadata, options) {
 
 function removeUnwantedItems(metadata, doNotGenerate) {
   let resultMetadata = {};
-  resultMetadata["definitions"] = metadata.definitions.reduce((reducedDef, def) => {
-    const entryName = def.name;
-    if (doNotGenerate.includes(entryName)) {
-      return reducedDef;
-    } else {
-      const filterItems = function (result, item) {
-        if (doNotGenerate.includes(memberName(entryName, item.name))) {
-          return result;
-        } else {
-          result.push(item);
-          return result;
+  resultMetadata["definitions"] = metadata.definitions.reduce(
+    (reducedDef, def) => {
+      const entryName = def.name;
+      if (doNotGenerate.includes(entryName)) {
+        return reducedDef;
+      } else {
+        const filterItems = function(result, item) {
+          if (doNotGenerate.includes(memberName(entryName, item.name))) {
+            return result;
+          } else {
+            result.push(item);
+            return result;
+          }
+        };
+
+        let resultDef = { ...def };
+
+        if (def.methods) {
+          resultDef.methods = def.methods.reduce(filterItems, []);
         }
-      };
+        if (def.properties) {
+          resultDef.properties = def.properties.reduce(filterItems, []);
+        }
 
-      let resultDef = { ...def };
-
-      if (def.methods) {
-        resultDef.methods = def.methods.reduce(filterItems, []);
+        reducedDef.push(resultDef);
+        return reducedDef;
       }
-      if (def.properties) {
-        resultDef.properties = def.properties.reduce(filterItems, []);
-      }
-
-      reducedDef.push(resultDef);
-      return reducedDef;
-    }
-  }, []);
+    },
+    []
+  );
   return resultMetadata;
 }
 
@@ -95,25 +98,31 @@ function addImplementedInfo(metadata, options) {
   const impInfo = getImplementedInfo(options);
 
   let resultMetadata = {};
-  resultMetadata.definitions = metadata.definitions.map((def) => {
+  resultMetadata.definitions = metadata.definitions.map(def => {
     let resultDef = { ...def };
+
+    let isImplemented = false;
 
     const entryName = def.name;
     if (impInfo[entryName]) {
       resultDef["implementationPath"] = impInfo[entryName].path;
+      isImplemented = true;
     }
 
     if (def.methods) {
-      resultDef.methods = def.methods.map((meth) => {
+      resultDef.methods = def.methods.map(meth => {
         let resultMeth = { ...meth };
         let mName = memberName(entryName, meth.name);
         if (impInfo[mName]) {
           resultMeth["implementationPath"] = impInfo[mName].path;
           resultMeth["implementationAlias"] = impInfo[mName].alias;
+          isImplemented = true;
         }
         return resultMeth;
       });
     }
+
+    resultDef["isImplemented"] = isImplemented;
 
     return resultDef;
   });
@@ -123,7 +132,7 @@ function addImplementedInfo(metadata, options) {
 
 function addGenerateClassInformation(metadata) {
   let resultMetadata = {};
-  resultMetadata.definitions = metadata.definitions.map((def) => {
+  resultMetadata.definitions = metadata.definitions.map(def => {
     let resultDef = { ...def };
     resultDef["generateClass"] = shouldGenerateClass(def);
     return resultDef;
@@ -133,25 +142,28 @@ function addGenerateClassInformation(metadata) {
 
 function mergeOverloadedMethods(metadata) {
   let resultMetadata = {};
-  resultMetadata.definitions = metadata.definitions.map((def) => {
+  resultMetadata.definitions = metadata.definitions.map(def => {
     if (def.methods) {
-      const mergeOverloads = function (currentMethods, method) {
-        let existing = currentMethods.find((current) => { return current.name == method.name && current.static == method.static });
+      const mergeOverloads = function(currentMethods, method) {
+        let existing = currentMethods.find(current => {
+          return current.name == method.name && current.static == method.static;
+        });
         if (existing) {
-          let params = mergeMethodParameters(existing.parameters, method.parameters);
+          let params = mergeMethodParameters(
+            existing.parameters,
+            method.parameters
+          );
           existing.parameters = params;
-        }
-        else {
+        } else {
           currentMethods.push({ ...method });
         }
         return currentMethods;
-      }
+      };
 
       let resultDef = { ...def };
       resultDef.methods = def.methods.reduce(mergeOverloads, []);
       return resultDef;
-    }
-    else {
+    } else {
       return def;
     }
   });
@@ -159,7 +171,7 @@ function mergeOverloadedMethods(metadata) {
 }
 
 function mergeMethodParameters(params1, params2) {
-  const makeParameterOptional = function (p) {
+  const makeParameterOptional = function(p) {
     let resultParam = { ...p };
     resultParam["optional"] = true;
     return resultParam;
@@ -178,9 +190,11 @@ function mergeMethodParameters(params1, params2) {
     result.push(mergedParameter(params1[i], params2[i]));
   }
 
-  const appendExtraParams = function (pars) {
+  const appendExtraParams = function(pars) {
     if (pars.length > commonCount) {
-      result = result.concat(pars.slice(commonCount).map(makeParameterOptional));
+      result = result.concat(
+        pars.slice(commonCount).map(makeParameterOptional)
+      );
     }
   };
 
@@ -194,23 +208,30 @@ function mergedParameter(par1, par2) {
   let result = { ...par1 };
   result["type"] = mergeParameterType(par1.type, par2.type);
   result["accesstype"] = mergeAccessType(par1.accessType, par2.accessType);
-  result["optional"] = boolFromValue(par1.optional) || boolFromValue(par2.optional);
+  result["optional"] =
+    boolFromValue(par1.optional) || boolFromValue(par2.optional);
   return result;
 }
 
 function boolFromValue(val) {
-  if (val == true) { return true; } else { return false; }
+  if (val == true) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function mergeAccessType(at1, at2) {
-  if (!at1 && !at2) { return "in"; }
-  else if (!at1) { return at2; }
-  else if (!at2) { return at1; }
-  else {
+  if (!at1 && !at2) {
+    return "in";
+  } else if (!at1) {
+    return at2;
+  } else if (!at2) {
+    return at1;
+  } else {
     if (at1 == at2) {
       return at1;
-    }
-    else {
+    } else {
       // either one of them is "inout" and the other is "in" or "out", or one is "in" and the other is "out"
       // anyhow =>
       return "inout";
@@ -219,11 +240,17 @@ function mergeAccessType(at1, at2) {
 }
 
 function mergeParameterType(t1, t2) {
-  if (!t1 && !t2) { return "" }
-  else if (!t1) { return t2 }
-  else if (!t2) { return t1 }
-  else if (t1 == t2) { return t1 }
-  else { return "any" }
+  if (!t1 && !t2) {
+    return "";
+  } else if (!t1) {
+    return t2;
+  } else if (!t2) {
+    return t1;
+  } else if (t1 == t2) {
+    return t1;
+  } else {
+    return "any";
+  }
 }
 
 function getImplemented(options) {
@@ -257,11 +284,10 @@ function getImplementedInfo(options) {
         }
       } else {
         implemented[entryKey] = {
-          path: options.implemented[entryKey].path,
+          path: options.implemented[entryKey].path
         };
       }
     }
-
   }
   return implemented;
 }
@@ -273,9 +299,10 @@ function getIgnored(options) {
       const entryValue = options.ignored[entryKey];
       if (entryValue === "all") {
         ignored = ignored.concat(memberName(entryKey));
-      }
-      else {
-        ignored = ignored.concat(entryValue.map(item => memberName(entryKey, item)));
+      } else {
+        ignored = ignored.concat(
+          entryValue.map(item => memberName(entryKey, item))
+        );
       }
     }
   }
@@ -306,20 +333,19 @@ function shouldGenerateClass(def) {
 function disambiguateElements(metadata, options) {
   const disambiguations = getDisambiguated(options);
   if (!disambiguations) {
-    return metadata
+    return metadata;
   }
 
   let resultMetadata = { ...metadata };
-  resultMetadata.definitions = metadata.definitions.map((def) => {
+  resultMetadata.definitions = metadata.definitions.map(def => {
     let entryName = def.name;
-    const disambiguateItem = function (item) {
+    const disambiguateItem = function(item) {
       let disambiguationName = memberName(entryName, item.name);
       if (disambiguations[disambiguationName]) {
         let resultItem = { ...item };
         resultItem.name = disambiguations[disambiguationName];
         return resultItem;
-      }
-      else {
+      } else {
         return item;
       }
     };
@@ -328,8 +354,7 @@ function disambiguateElements(metadata, options) {
       let resultDef = { ...def };
       resultDef.methods = def.methods.map(disambiguateItem);
       return resultDef;
-    }
-    else {
+    } else {
       return def;
     }
   });
@@ -338,7 +363,7 @@ function disambiguateElements(metadata, options) {
 
 function getDisambiguated(options) {
   if (!options["disambiguated"]) {
-    return null
+    return null;
   }
 
   let disambiguated = {};
