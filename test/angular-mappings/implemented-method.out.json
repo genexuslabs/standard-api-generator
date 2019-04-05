@@ -3,7 +3,6 @@
     {
       "name": "Boolean",
       "generatesClass": false,
-      "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/not-implemented",
       "methods": [
         {
           "name": "IsEmpty",

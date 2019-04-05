@@ -21,7 +21,7 @@ function generate(metadata, options) {
         name: def.name,
         generatesClass: genClass,
         externalName: genClass ? sanitizeClassName(def.name) : undefined,
-        externalModuleName: impPath,
+        externalModuleName: genClass ? impPath : undefined,
         methods: def.methods
           ? def.methods.map(meth => {
               let methImpPath = meth.implementationPath
@@ -32,7 +32,7 @@ function generate(metadata, options) {
                 externalName: meth.implementationAlias
                   ? meth.implementationAlias
                   : sanitizeName(meth.name),
-                externalModuleName: genClass ? impPath : methImpPath,
+                externalModuleName: genClass ? undefined : methImpPath,
                 isStatic: meth.static ? true : undefined
               };
             })
