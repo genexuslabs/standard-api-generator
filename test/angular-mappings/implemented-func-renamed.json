@@ -1,0 +1,25 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "Numeric",
+                            "name": "Value"
+                        }
+                    ],
+                    "returns": "String",
+                    "scopes": [],
+                    "static": true,
+                    "name": "Str"
+                }
+            ],
+            "name": "Core"
+        }
+    ]
+}

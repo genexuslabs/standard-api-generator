@@ -1,0 +1,16 @@
+{
+    "modules": [
+        {
+            "name": "Core",
+            "generatesClass": false,
+            "methods": [
+                {
+                    "name": "Str",
+                    "externalName": "toString",
+                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/numeric/toString",
+                    "isStatic": true
+                }
+            ]
+        }
+    ]
+}

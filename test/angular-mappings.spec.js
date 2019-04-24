@@ -27,6 +27,10 @@ const testCases = [
   {
     file_name: "implemented-method-static",
     description: "Already implemented static method"
+  },
+  {
+    file_name: "implemented-func-renamed",
+    description: "Already implemented function with a rename"
   }
 ];
 
