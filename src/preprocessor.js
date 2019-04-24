@@ -279,7 +279,7 @@ function getImplementedInfo(options) {
         for (let memberKey in members) {
           implemented[memberName(entryKey, memberKey)] = {
             path: members[memberKey].path,
-            alias: members[memberKey].alias
+            alias: members[memberKey].name
           };
         }
       } else {
