@@ -15,6 +15,10 @@ const testCases = [
   {
     file_name: "type-with-no-methods",
     description: "Type without methods"
+  },
+  {
+    file_name: "core-module-not-implemented-eo",
+    description: "Not implemented external object from Core Module"
   }
 ];
 

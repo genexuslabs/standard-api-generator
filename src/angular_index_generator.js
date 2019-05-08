@@ -20,7 +20,7 @@ function generate(metadata, options) {
       let result = "";
 
       if (genClass) {
-        result = `export {${def.name}} from "${impPath}";\n`;
+        result = `export {${sanitizeClassName(def.name)}} from "${impPath}";\n`;
       }
       else if (def.methods) {
         for (const meth of def.methods) {

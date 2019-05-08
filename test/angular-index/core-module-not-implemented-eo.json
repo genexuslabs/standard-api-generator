@@ -1,0 +1,97 @@
+{
+    "definitions": [
+        {
+            "description": "Card Scanner",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [],
+                    "returns": "GeneXus.SD.CardInformation",
+                    "scopes": null,
+                    "static": true,
+                    "name": "ScanCard"
+                }
+            ],
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "IsAvailable"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "CollectCardholderName"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "CollectCVV"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "CollectExpiry"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "CollectPostalCode"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Any",
+                    "name": "DetectionMode"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "DisableManualEntry"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "RestrictPostalCodeNumeric"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "ScanExpiry"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "String",
+                    "name": "ScanInstructionsText"
+                },
+                {
+                    "description": "",
+                    "readonly": false,
+                    "static": true,
+                    "type": "Boolean",
+                    "name": "SuppressScanConfirmation"
+                }
+            ],
+            "name": "GeneXus.SD.CardScanner"
+        }
+    ]
+}
