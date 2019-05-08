@@ -29,13 +29,15 @@ This file must be indicated in the options file as follows:
 The program produces two output files:
  - The "not implemented" TypeScript file containing an empty implementation of all missing types and funcions.
  - The Angular generator's type mappings JSON file.
+ - The Angular generator's index file containing all the exports for types and functions.
 
-These files are indicated with "notImplementedOutputFilePath" and "angularMappingsOutputFilePath" as follws:
+These files are indicated with `"notImplementedOutputFilePath"`, `"angularMappingsOutputFilePath"` and `"angularIndexOutputFilePath"` as follws:
 
 ```json
 {
     "notImplementedOutputFilePath": "out/not_implemented.ts",
-    "angularMappingsOutputFilePath": "out/angular_metadata.json",
+	"angularMappingsOutputFilePath": "out/angular_metadata.json",
+	"angularIndexOutputFilePath": "out/angular_index.ts",
 }
 ```
 

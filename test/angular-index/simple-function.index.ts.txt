@@ -1,0 +1,1 @@
+export {toString} from "@genexus/web-standard-functions/dist/lib-esm/numeric/toString";

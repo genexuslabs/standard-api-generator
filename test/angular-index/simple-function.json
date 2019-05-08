@@ -1,0 +1,18 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [],
+                    "returns": "String",
+                    "scopes": [],
+                    "static": true,
+                    "name": "ToString"
+                }
+            ],
+            "name": "Numeric"
+        }
+    ]
+}

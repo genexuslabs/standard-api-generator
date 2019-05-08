@@ -3,6 +3,7 @@ const fs = require("fs");
 const cli = require("cli");
 const generateTypescriptAPI = require("./src/ts_api_generator");
 const generateAngularMetadata = require("./src/angular_metadata_generator");
+const generateAngularIndex = require("./src/angular_index_generator");
 const path = require("path");
 const {
   preprocessForTypescriptAPI,
@@ -19,27 +20,44 @@ if (!parameters.options) {
 }
 
 const options = JSON.parse(fs.readFileSync(absolutePath(parameters.options)));
+if (!options) {
+  return;
+}
 
 const metadataFilePath = absolutePath(options["metadataFilePath"]);
 const rawMetadata = JSON.parse(fs.readFileSync(metadataFilePath));
 
 const tsAPIMetadata = preprocessForTypescriptAPI(rawMetadata, options);
 
-const notImplementedOutputFilePath = absolutePath(options["notImplementedOutputFilePath"]);
-if (notImplementedOutputFilePath) {
-  const generatedTypescript = generateTypescriptAPI(tsAPIMetadata, options);
-  writeToFile(notImplementedOutputFilePath, generatedTypescript);
-}
+generateOutput(
+  options["notImplementedOutputFilePath"],
+  generateTypescriptAPI,
+  tsAPIMetadata
+);
 
 const mappingsMetadata = preprocessForAngularMetadata(rawMetadata, options);
 
-const angularMetadataOutputFilePath = absolutePath(options["angularMappingsOutputFilePath"]);
-if (angularMetadataOutputFilePath) {
-  const generatedMappings = generateAngularMetadata(mappingsMetadata, options);
-  writeToFile(angularMetadataOutputFilePath, generatedMappings);
-}
+generateOutput(
+  options["angularMappingsOutputFilePath"],
+  generateAngularMetadata,
+  mappingsMetadata
+);
+
+generateOutput(
+  options["angularIndexOutputFilePath"],
+  generateAngularIndex,
+  mappingsMetadata
+);
 
 //////// Helper functions
+
+function generateOutput(outFileRelPath, generator, metadata) {
+  const outFilePath = absolutePath(outFileRelPath);
+  if (outFilePath) {
+    const generated = generator(metadata, options);
+    writeToFile(outFilePath, generated);
+  }
+}
 
 function absolutePath(relPath) {
   if (path.isAbsolute(relPath)) {
