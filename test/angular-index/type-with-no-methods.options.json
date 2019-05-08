@@ -1,0 +1,10 @@
+{
+    "angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+    },
+    "implemented": {
+        "Numeric": {
+            "members": {}
+        }
+    }
+}

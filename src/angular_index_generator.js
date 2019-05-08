@@ -22,7 +22,7 @@ function generate(metadata, options) {
       if (genClass) {
         result = `export {${def.name}} from "${impPath}";\n`;
       }
-      else {
+      else if (def.methods) {
         for (const meth of def.methods) {
           let methImpPath = meth.implementationPath ? meth.implementationPath : defaultImplementationPath;
           let methodName = sanitizeName(meth.name);

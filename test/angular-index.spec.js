@@ -11,6 +11,10 @@ const testCases = [
   {
     file_name: "simple-function",
     description: "Simple function"
+  },
+  {
+    file_name: "type-with-no-methods",
+    description: "Type without methods"
   }
 ];
 
