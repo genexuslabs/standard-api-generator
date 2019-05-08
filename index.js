@@ -60,6 +60,9 @@ function generateOutput(outFileRelPath, generator, metadata) {
 }
 
 function absolutePath(relPath) {
+  if (!relPath) {
+    return null;
+  }
   if (path.isAbsolute(relPath)) {
     return relPath;
   } else {
