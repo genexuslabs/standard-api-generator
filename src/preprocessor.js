@@ -115,6 +115,7 @@ function addImplementedInfo(metadata, options) {
         let mName = memberName(entryName, meth.name);
         if (impInfo[mName]) {
           resultMeth["implementationPath"] = impInfo[mName].path;
+          resultMeth["implementationName"] = impInfo[mName].name;
           resultMeth["implementationAlias"] = impInfo[mName].alias;
           isImplemented = true;
         }
@@ -279,7 +280,8 @@ function getImplementedInfo(options) {
         for (let memberKey in members) {
           implemented[memberName(entryKey, memberKey)] = {
             path: members[memberKey].path,
-            alias: members[memberKey].name
+            name: members[memberKey].name,
+            alias: members[memberKey].alias
           };
         }
       } else {

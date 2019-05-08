@@ -26,14 +26,11 @@ function generate(metadata, options) {
         for (const meth of def.methods) {
           let methImpPath = meth.implementationPath ? meth.implementationPath : defaultImplementationPath;
           let methodName = sanitizeName(meth.name);
-          let externalName = meth.implementationAlias ? meth.implementationAlias : methodName;
+          let methImpName = meth.implementationName ? meth.implementationName : methodName;
+          let methImpAlias = meth.implementationAlias;
 
-          let as = "";
-          if (methodName !== externalName) {
-            as = ` as ${externalName}`;
-          }
-
-          result = result + `export {${methodName}${as}} from "${methImpPath}";\n`
+          let as = (methImpAlias && methImpAlias !== methImpName) ? ` as ${methImpAlias}` : "";
+          result = result + `export {${methImpName}${as}} from "${methImpPath}";\n`
         }
       }
 

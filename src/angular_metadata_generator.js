@@ -29,9 +29,8 @@ function generate(metadata, options) {
                 : defaultImplementationPath;
               return {
                 name: meth.name,
-                externalName: meth.implementationAlias
-                  ? meth.implementationAlias
-                  : sanitizeName(meth.name),
+                implementationName: meth.implementationName ? meth.implementationName : sanitizeName(meth.name),
+                externalName: meth.implementationAlias ? meth.implementationAlias : sanitizeName(meth.name),
                 externalModuleName: genClass ? undefined : methImpPath,
                 isStatic: meth.static ? true : undefined
               };

@@ -6,6 +6,7 @@
       "methods": [
         {
           "name": "IsEmpty",
+          "implementationName": "isEmpty",
           "externalName": "isEmpty",
           "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/bool/isempty"
         }

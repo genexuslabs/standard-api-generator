@@ -7,7 +7,8 @@
             "members": {
                 "Str": {
                     "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/toString",
-                    "name": "toString"
+                    "name": "toString",
+                    "alias": "number_toString"
                 }
             }
         }

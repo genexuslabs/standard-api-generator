@@ -6,7 +6,8 @@
             "methods": [
                 {
                     "name": "Str",
-                    "externalName": "toString",
+                    "implementationName": "toString",
+                    "externalName": "number_toString",
                     "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/numeric/toString",
                     "isStatic": true
                 }

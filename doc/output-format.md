@@ -192,6 +192,7 @@ interface IModuleEntry {
 
 interface IMethodEntry {
     name: string;
+    implementationName: string;
     externalName: string;
     extarnalModuleName: string;
 }
@@ -209,6 +210,7 @@ Example:
             "methods": [
                 {
                     "name": "LTrim",
+                    "implementationName": "lTrim",                   
                     "externalName": "lTrim",
                     "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/text/ltrim"
                 }
@@ -217,3 +219,8 @@ Example:
     ]
 }
 ```
+
+# Angular generator's TypeScript index file
+
+An index file is generated with an `export` for every type or function, so that this file can be imported in the Angular Generator's generated files without importing the types or functions one by one.
+
