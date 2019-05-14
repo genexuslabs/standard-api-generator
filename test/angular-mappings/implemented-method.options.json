@@ -1,6 +1,7 @@
 {
     "angularMappings": {
-        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented",
+        "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
     },
 
     "implemented": {

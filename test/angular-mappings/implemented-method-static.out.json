@@ -8,7 +8,7 @@
           "name": "IsEmpty",
           "implementationName": "isEmpty",
           "externalName": "isEmpty",
-          "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/bool/isempty",
+          "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
           "isStatic": true
         }
       ]

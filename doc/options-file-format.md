@@ -26,7 +26,7 @@ This file must be indicated in the options file as follows:
 
 ### Output files
 
-The program produces two output files:
+The program produces three output files:
  - The "not implemented" TypeScript file containing an empty implementation of all missing types and funcions.
  - The Angular generator's type mappings JSON file.
  - The Angular generator's index file containing all the exports for types and functions.
@@ -53,6 +53,18 @@ Indicates the path to the not-implemented functions.
 {
 	"angularMappings": {
         "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+    }
+}
+```
+
+#### Angular index output path
+
+Indicates the path to the not-implemented functions.
+
+```json
+{
+	"angularMappings": {
+        "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
     }
 }
 ```
