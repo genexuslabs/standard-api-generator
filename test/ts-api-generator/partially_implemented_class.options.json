@@ -1,0 +1,12 @@
+{
+    "implemented": {
+        "Numeric": {
+            "members": {
+				"IsEmpty": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/numeric/isempty",
+					"name": "isEmpty"
+				}
+			}
+        }
+    }
+}

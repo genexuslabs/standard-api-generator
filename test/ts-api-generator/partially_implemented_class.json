@@ -1,0 +1,87 @@
+{
+  "definitions": [
+    {
+        "description": "",
+        "methods": [
+          {
+            "description": "",
+            "parameters": [],
+            "returns": "Numeric",
+            "scopes": null,
+            "name": "Integer"
+          },
+          {
+            "description": "",
+            "parameters": [],
+            "returns": "Boolean",
+            "scopes": null,
+            "name": "IsEmpty"
+          },
+          {
+            "description": "",
+            "parameters": [
+              {
+                "accesstype": "in",
+                "description": "",
+                "type": "String",
+                "name": "Value"
+              }
+            ],
+            "returns": "Any",
+            "scopes": null,
+            "name": "FromString"
+          },
+          {
+            "description": "",
+            "parameters": [
+              {
+                "accesstype": "in",
+                "description": "",
+                "type": "Numeric",
+                "name": "pDecimals"
+              }
+            ],
+            "returns": "Numeric",
+            "scopes": null,
+            "name": "Round"
+          },
+          {
+            "description": "",
+            "parameters": [
+              {
+                "accesstype": "in",
+                "description": "",
+                "type": "Numeric",
+                "name": "pDecimals"
+              }
+            ],
+            "returns": "Numeric",
+            "scopes": null,
+            "name": "RoundToEven"
+          },
+          {
+            "description": "",
+            "parameters": [],
+            "returns": "String",
+            "scopes": null,
+            "name": "ToString"
+          },
+          {
+            "description": "",
+            "parameters": [
+              {
+                "accesstype": "in",
+                "description": "",
+                "type": "Numeric",
+                "name": "pDecimals"
+              }
+            ],
+            "returns": "Numeric",
+            "scopes": null,
+            "name": "Truncate"
+          }
+        ],
+        "name": "Numeric"
+      }
+  ]
+}

@@ -51,6 +51,10 @@ const testCases = [
   {
       "file_name": "ignored_type",
       "description": "Ignored type"
+  },
+  {
+      "file_name": "partially_implemented_class",
+      "description": "Partially implemented class implemented as functions"
   }
 ];
 

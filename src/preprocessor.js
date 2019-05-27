@@ -12,7 +12,7 @@ function preprocessCommon(metadata, options) {
   }
 
   metadata = removeIgnored(metadata, options);
-  metadata = addGenerateClassInformation(metadata);
+  metadata = addGenerateClassInformation(metadata, options);
   metadata = mergeOverloadedMethods(metadata);
   metadata = disambiguateElements(metadata, options);
 
@@ -131,11 +131,11 @@ function addImplementedInfo(metadata, options) {
   return resultMetadata;
 }
 
-function addGenerateClassInformation(metadata) {
+function addGenerateClassInformation(metadata, options) {
   let resultMetadata = {};
   resultMetadata.definitions = metadata.definitions.map(def => {
     let resultDef = { ...def };
-    resultDef["generateClass"] = shouldGenerateClass(def);
+    resultDef["generateClass"] = shouldGenerateClass(def, options);
     return resultDef;
   });
   return resultMetadata;
@@ -319,8 +319,17 @@ function memberName(entry, member = undefined) {
   }
 }
 
-function shouldGenerateClass(def) {
+function shouldGenerateClass(def, options) {
   let genClass = false;
+
+  if (options.implemented) {
+    // if already marked as implemented (may be partially implemented), then use the known implementation details
+    const impDetails = options.implemented[def.name];
+    if (impDetails) {
+      return impDetails.path !== undefined;
+    }
+  }
+
   if (def.methods) {
     genClass = def.methods.reduce((result, method) => {
       return result || !method.static;
