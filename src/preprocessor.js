@@ -67,7 +67,7 @@ function removeUnwantedItems(metadata, doNotGenerate) {
       if (doNotGenerate.includes(entryName)) {
         return reducedDef;
       } else {
-        const filterItems = function(result, item) {
+        const filterItems = function (result, item) {
           if (doNotGenerate.includes(memberName(entryName, item.name))) {
             return result;
           } else {
@@ -145,7 +145,7 @@ function mergeOverloadedMethods(metadata) {
   let resultMetadata = {};
   resultMetadata.definitions = metadata.definitions.map(def => {
     if (def.methods) {
-      const mergeOverloads = function(currentMethods, method) {
+      const mergeOverloads = function (currentMethods, method) {
         let existing = currentMethods.find(current => {
           return current.name == method.name && current.static == method.static;
         });
@@ -172,7 +172,7 @@ function mergeOverloadedMethods(metadata) {
 }
 
 function mergeMethodParameters(params1, params2) {
-  const makeParameterOptional = function(p) {
+  const makeParameterOptional = function (p) {
     let resultParam = { ...p };
     resultParam["optional"] = true;
     return resultParam;
@@ -191,7 +191,7 @@ function mergeMethodParameters(params1, params2) {
     result.push(mergedParameter(params1[i], params2[i]));
   }
 
-  const appendExtraParams = function(pars) {
+  const appendExtraParams = function (pars) {
     if (pars.length > commonCount) {
       result = result.concat(
         pars.slice(commonCount).map(makeParameterOptional)
@@ -341,7 +341,7 @@ function disambiguateElements(metadata, options) {
   let resultMetadata = { ...metadata };
   resultMetadata.definitions = metadata.definitions.map(def => {
     let entryName = def.name;
-    const disambiguateItem = function(item) {
+    const disambiguateItem = function (item) {
       let disambiguationName = memberName(entryName, item.name);
       if (disambiguations[disambiguationName]) {
         let resultItem = { ...item };
@@ -380,8 +380,53 @@ function getDisambiguated(options) {
   return disambiguated;
 }
 
+function transformAttributeAndVariableMethods(metadata, options) {
+  let methodsToAdd = metadata.definitions
+    .filter(def => def.name === "AttributePEM" || def.name === "VariablePEM")
+    .reduce((methods, def) => {
+      if (def.methods !== undefined) {
+        const names = methods.map(meth => meth.name);
+        const filteredMethods = def.methods.filter(meth => !names.find(name => name === meth.name));
+        return methods.concat(filteredMethods);
+      }
+      else {
+        return methods;
+      }
+    }, []);
+
+  if (methodsToAdd.count == 0) {
+    return metadata;
+  }
+
+  const searchTypes = ['Numeric', 'Character', 'Varchar', 'LongVarchar', 'Date', 'DateTime', 'Image', 'Audio', 'Video', 'Binary', 'Blob', 'Boolean', 'GUID'];
+
+  const appendMethods = function (def) {
+    if (def.methods) {
+      const defMethodNames = def.methods.map(meth => meth.name);
+      const filteredMethods = methodsToAdd.filter(meth => !defMethodNames.find(name => name === meth.name));
+      return def.methods.concat(filteredMethods);
+    }
+    else {
+      return methodsToAdd;
+    }
+  }
+
+  let resultMetadata = { ...metadata };
+  resultMetadata.definitions = metadata.definitions.map(def => {
+    if (!searchTypes.find(typeName => typeName === def.name)) {
+      return def;
+    }
+
+    let resultDef = { ...def };
+    resultDef.methods = appendMethods(def);
+    return resultDef;
+  });
+  return resultMetadata;
+}
+
 module.exports = {
   preprocessForTypescriptAPI: preprocessForTypescriptAPI,
   preprocessForAngularMetadata: preprocessForAngularMetadata,
-  mergeOverloadedMethods: mergeOverloadedMethods
+  mergeOverloadedMethods: mergeOverloadedMethods,
+  transformAttributeAndVariableMethods: transformAttributeAndVariableMethods
 };

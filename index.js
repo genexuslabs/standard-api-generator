@@ -7,7 +7,8 @@ const generateAngularIndex = require("./src/angular_index_generator");
 const path = require("path");
 const {
   preprocessForTypescriptAPI,
-  preprocessForAngularMetadata
+  preprocessForAngularMetadata,
+  transformAttributeAndVariableMethods
 } = require("./src/preprocessor");
 
 const parameters = cli.parse({
@@ -27,7 +28,9 @@ if (!options) {
 const metadataFilePath = absolutePath(options["metadataFilePath"]);
 const rawMetadata = JSON.parse(fs.readFileSync(metadataFilePath));
 
-const tsAPIMetadata = preprocessForTypescriptAPI(rawMetadata, options);
+const transformedMetadata = transformAttributeAndVariableMethods(rawMetadata);
+
+const tsAPIMetadata = preprocessForTypescriptAPI(transformedMetadata, options);
 
 generateOutput(
   options["notImplementedOutputFilePath"],
@@ -35,7 +38,7 @@ generateOutput(
   tsAPIMetadata
 );
 
-const mappingsMetadata = preprocessForAngularMetadata(rawMetadata, options);
+const mappingsMetadata = preprocessForAngularMetadata(transformedMetadata, options);
 
 generateOutput(
   options["angularMappingsOutputFilePath"],
