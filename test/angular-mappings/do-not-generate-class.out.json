@@ -1,0 +1,22 @@
+{
+  "modules": [
+    {
+      "name": "Boolean",
+      "generatesClass": false,
+      "methods": [
+        {
+          "name": "Method",
+          "implementationName": "method",
+          "externalName": "method",
+          "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index"
+        }
+      ],
+      "properties": [
+          {
+              "name": "Property",
+              "unavailable": true
+          }
+      ]
+    }
+  ]
+}

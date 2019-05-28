@@ -41,9 +41,29 @@ These files are indicated with `"notImplementedOutputFilePath"`, `"angularMappin
 }
 ```
 
+### Not implemented types and functions settings
+
+The section `"notImplementedSettings"` contains settings to modify how the output file is generated.
+
+#### Do not generate classes
+
+Indicates that classes should never be generated.
+
+If set to `true`, then all methods are generated as standalone funcions and properties are not included. In that case the angular mappings output file will indicate that properties are not defined.
+
+Default value (if not indicated) is `false`.
+
+```json
+{
+	"notImplementedSettings": {
+		"doNotGenerateClasses": true
+	}
+}
+```
+
 ### Angular mappings settings
 
-The section "angularMappings" contains settings required for producing the correct Angular mappings output.
+The section `"angularMappings"` contains settings required for producing the correct Angular mappings output.
 
 #### Modules default path
 

@@ -55,6 +55,10 @@ const testCases = [
   {
       "file_name": "partially_implemented_class",
       "description": "Partially implemented class implemented as functions"
+  },
+  {
+      "file_name": "do-not-generate-class",
+      "description": "Explicitly indicated not to generate classes"
   }
 ];
 

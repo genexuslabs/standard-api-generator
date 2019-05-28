@@ -320,8 +320,6 @@ function memberName(entry, member = undefined) {
 }
 
 function shouldGenerateClass(def, options) {
-  let genClass = false;
-
   if (options.implemented) {
     // if already marked as implemented (may be partially implemented), then use the known implementation details
     const impDetails = options.implemented[def.name];
@@ -329,6 +327,15 @@ function shouldGenerateClass(def, options) {
       return impDetails.path !== undefined;
     }
   }
+
+  // check if not implemented types may generate classes
+  if (options.notImplementedSettings) {
+    if (options.notImplementedSettings.doNotGenerateClasses === true) {
+      return false;
+    }
+  }
+
+  let genClass = false;
 
   if (def.methods) {
     genClass = def.methods.reduce((result, method) => {

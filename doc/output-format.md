@@ -110,7 +110,7 @@ export function addMth(value: Date, months: number): Date {
 
 ## Properties generation
 
-Properties are generated as TypeScript properties with a trivial implementation.
+Properties are generated as TypeScript properties with a trivial implementation, unless the options file indicates not to generate classes.
 
 That is, the getter and setter are generated (except for read-only properties) to read and write from a private member.
 
@@ -169,6 +169,64 @@ export class Directory {
   static get applicationDataPath(): any {
     return this.mapplicationDataPath;
   }
+}
+```
+
+### Properties when doNotGenerateClasses setting is set to true
+
+If the `doNotGenerateClasses` setting is set to `true`, then classes are not generated and so properties cannot be generated either.
+
+In such a case, the metadata JSON will indicate which propertoes are not included.
+
+Example:
+
+Input: 
+
+```json
+{
+    "definitions": [
+        {
+            "description": "",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": false,
+                    "type": "String",
+                    "name": "Property"
+                }
+            ],
+            "name": "Boolean"
+        }
+    ]
+}
+```
+
+Options:
+
+```json
+{
+    "notImplementedSettings": {
+        "doNotGenerateClasses": true
+    }
+}
+```
+
+Output:
+
+```json
+{
+  "modules": [
+    {
+      "name": "Boolean",
+      "generatesClass": false,
+      "properties": [
+          {
+              "name": "Property",
+              "unavailable": true
+          }
+      ]
+    }
+  ]
 }
 ```
 

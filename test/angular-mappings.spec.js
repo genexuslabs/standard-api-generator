@@ -35,6 +35,10 @@ const testCases = [
   {
     file_name: "not-implemented-method-disambiguated",
     description: "Not implemented method with a disambiguation"
+  },
+  {
+    file_name: "do-not-generate-class",
+    description: "Explicitly indicated not to generate classes"
   }
 ];
 
