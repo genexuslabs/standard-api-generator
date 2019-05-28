@@ -1,0 +1,17 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [],
+                    "returns": "Any",
+                    "scopes": null,
+                    "name": "ToFormattedString"
+                }
+            ],
+            "name": "Boolean"
+        }
+    ]
+}

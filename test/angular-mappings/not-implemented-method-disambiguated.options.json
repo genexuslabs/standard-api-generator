@@ -1,0 +1,11 @@
+{
+    "angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented",
+        "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
+    },
+    "disambiguated": {
+        "Boolean": {
+            "ToFormattedString": "bToFormattedString"
+        }
+    }
+}

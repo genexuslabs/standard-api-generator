@@ -354,7 +354,8 @@ function disambiguateElements(metadata, options) {
       let disambiguationName = memberName(entryName, item.name);
       if (disambiguations[disambiguationName]) {
         let resultItem = { ...item };
-        resultItem.name = disambiguations[disambiguationName];
+        resultItem.implementationName = disambiguations[disambiguationName];
+        resultItem.implementationAlias = disambiguations[disambiguationName];
         return resultItem;
       } else {
         return item;

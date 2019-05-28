@@ -1,0 +1,17 @@
+{
+  "modules": [
+    {
+      "name": "Boolean",
+      "generatesClass": true,
+      "externalName": "Boolean",
+      "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+      "methods": [
+        {
+            "name": "ToFormattedString",
+            "implementationName": "bToFormattedString",
+            "externalName": "bToFormattedString"
+        }
+      ]
+    }
+  ]
+}

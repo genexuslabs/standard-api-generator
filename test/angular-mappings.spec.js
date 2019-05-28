@@ -31,6 +31,10 @@ const testCases = [
   {
     file_name: "implemented-func-renamed",
     description: "Already implemented function with a rename"
+  },
+  {
+    file_name: "not-implemented-method-disambiguated",
+    description: "Not implemented method with a disambiguation"
   }
 ];
 
