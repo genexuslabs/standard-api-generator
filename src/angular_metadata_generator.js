@@ -28,7 +28,8 @@ function generate(metadata, options) {
               implementationName: meth.implementationName ? meth.implementationName : sanitizeName(meth.name),
               externalName: meth.implementationAlias ? meth.implementationAlias : sanitizeName(meth.name),
               externalModuleName: genClass ? undefined : angularIndexPath,
-              isStatic: meth.static ? true : undefined
+              isStatic: meth.static ? true : undefined,
+              notifiesGenerator: meth.notifiesGenerator ? true : undefined
             };
           })
           : undefined,

@@ -39,6 +39,10 @@ const testCases = [
   {
     file_name: "do-not-generate-class",
     description: "Explicitly indicated not to generate classes"
+  },
+  {
+    file_name: "implemented-func-notifies-generator",
+    description: "Already implemented function that pushes a message to the generator"
   }
 ];
 

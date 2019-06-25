@@ -1,0 +1,18 @@
+{
+    "modules": [
+        {
+            "name": "Core",
+            "generatesClass": false,
+            "methods": [
+                {
+                    "name": "Msg",
+                    "implementationName": "msg",
+                    "externalName": "msg",
+                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "isStatic": true,
+                    "notifiesGenerator": true
+                }
+            ]
+        }
+    ]
+}

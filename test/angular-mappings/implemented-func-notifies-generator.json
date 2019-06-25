@@ -1,0 +1,34 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "String",
+                            "name": "Message"
+                        },
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "nowait|status",
+                            "name": "Mode"
+                        }
+                    ],
+                    "returns": "Any",
+                    "scopes": [
+                        "SD.Source.Functions",
+                        "Trn.Rules"
+                    ],
+                    "static": true,
+                    "name": "Msg"
+                }
+            ],
+            "name": "Core"
+        }
+    ]
+}

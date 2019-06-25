@@ -133,6 +133,24 @@ Standalone functions must have the path where they are implemented and also an o
 					"alias": "playAudio"
 				}
 			}
+		}
+	}
+}
+```
+
+Functions that publish an async message to be handled by the generator must declare that information.
+
+```json
+{
+	"implemented": {
+		"Core": {
+			"members": {
+				"Msg": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/misc/msg",
+					"name": "msg",
+					"notifiesGenerator": true
+				}
+			}
 		},
 	}
 }

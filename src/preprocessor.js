@@ -117,6 +117,7 @@ function addImplementedInfo(metadata, options) {
           resultMeth["implementationPath"] = impInfo[mName].path;
           resultMeth["implementationName"] = impInfo[mName].name;
           resultMeth["implementationAlias"] = impInfo[mName].alias;
+          resultMeth["notifiesGenerator"] = impInfo[mName].notifiesGenerator;
           isImplemented = true;
         }
         return resultMeth;
@@ -281,7 +282,8 @@ function getImplementedInfo(options) {
           implemented[memberName(entryKey, memberKey)] = {
             path: members[memberKey].path,
             name: members[memberKey].name,
-            alias: members[memberKey].alias
+            alias: members[memberKey].alias,
+            notifiesGenerator: members[memberKey].notifiesGenerator
           };
         }
       } else {
