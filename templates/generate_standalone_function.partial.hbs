@@ -10,7 +10,7 @@
  * @return {{mapType returns}}
 {{/if}}
  */
-export function {{#if implementationName}}{{sanitizeName implementationName}}{{else}}{{sanitizeName name}}{{/if}}({{#joinParameters parameters}}{{this}}{{/joinParameters}}){{#if returns}}: {{mapType returns}}{{/if}} {
-  notImplemented();{{#if returns}}
+export function {{#if implementationName}}{{sanitizeName implementationName}}{{else}}{{sanitizeName name}}{{/if}}(...args: any[]){{#if returns}}: any{{/if}} {
+  notImplemented("{{#if implementationName}}{{sanitizeName implementationName}}{{else}}{{sanitizeName name}}{{/if}}");{{#if returns}}
   return null;{{/if}}
 }
