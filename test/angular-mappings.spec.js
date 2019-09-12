@@ -41,6 +41,10 @@ const testCases = [
     description: "Explicitly indicated not to generate classes"
   },
   {
+    file_name: "do-not-generate-class-available-property",
+    description: "Explicitly indicated not to generate classes, with available properties provided by the generator"
+  },
+  {
     file_name: "implemented-func-notifies-generator",
     description: "Already implemented function that pushes a message to the generator"
   }

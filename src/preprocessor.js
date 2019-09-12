@@ -124,6 +124,22 @@ function addImplementedInfo(metadata, options) {
       });
     }
 
+    if (def.properties) {
+      resultDef.properties = def.properties.map(prop => {
+        let resultProp = { ...prop };
+        let pName = memberName(entryName, prop.name);
+        if (impInfo[pName]) {
+          if (impInfo[pName].available) {
+            resultProp["unavailable"] = false;
+          }
+          else {
+            resultProp["unavailable"] = true;
+          }
+        }
+        return resultProp;
+      });
+    }
+
     resultDef["isImplemented"] = isImplemented;
 
     return resultDef;
@@ -283,7 +299,8 @@ function getImplementedInfo(options) {
             path: members[memberKey].path,
             name: members[memberKey].name,
             alias: members[memberKey].alias,
-            notifiesGenerator: members[memberKey].notifiesGenerator
+            notifiesGenerator: members[memberKey].notifiesGenerator,
+            available: members[memberKey].available
           };
         }
       } else {

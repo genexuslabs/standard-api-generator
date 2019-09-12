@@ -37,7 +37,7 @@ function generate(metadata, options) {
           ? def.properties.map(prop => {
             return {
               name: prop.name,
-              unavailable: true
+              unavailable: (prop.unavailable !== undefined) ? prop.unavailable : true
             }
           })
           : undefined

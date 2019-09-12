@@ -1,0 +1,18 @@
+{
+  "angularMappings": {
+    "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented",
+    "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
+  },
+  "notImplementedSettings": {
+    "doNotGenerateClasses": true
+  },
+  "implemented": {
+    "Collection": {
+      "members": {
+        "CurrentItem": {
+          "available": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "modules": [
+    {
+      "name": "Collection",
+      "generatesClass": false,
+      "methods": [],
+      "properties": [
+        {
+          "name": "Count",
+          "unavailable": true
+        },
+        {
+          "name": "CurrentItem",
+          "unavailable": false
+        }
+      ]
+    }
+  ]
+}

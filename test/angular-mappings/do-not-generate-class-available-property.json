@@ -1,0 +1,23 @@
+{
+  "definitions": [
+    {
+      "description": "",
+      "methods": [],
+      "properties": [
+        {
+          "description": "",
+          "readonly": false,
+          "type": "Numeric",
+          "name": "Count"
+        },
+        {
+          "description": "",
+          "readonly": false,
+          "type": "Any",
+          "name": "CurrentItem"
+        }
+      ],
+      "name": "Collection"
+    }
+  ]
+}
