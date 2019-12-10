@@ -47,6 +47,10 @@ const testCases = [
   {
     file_name: "implemented-func-notifies-generator",
     description: "Already implemented function that pushes a message to the generator"
+  },
+  {
+    file_name: "implemented-func-lowercase-name",
+    description: "Implemented function with lowercase name"
   }
 ];
 

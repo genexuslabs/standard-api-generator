@@ -1,0 +1,17 @@
+{
+    "modules": [
+        {
+            "name": "Core",
+            "generatesClass": false,
+            "methods": [
+                {
+                    "name": "iif",
+                    "implementationName": "iif",
+                    "externalName": "iif",
+                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "isStatic": true
+                }
+            ]
+        }
+    ]
+}

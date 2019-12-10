@@ -1,0 +1,37 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "Boolean",
+                            "name": "Condition"
+                        },
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "Any",
+                            "name": "Value"
+                        },
+                        {
+                            "accesstype": "in",
+                            "description": "",
+                            "type": "Any",
+                            "name": "Value"
+                        }
+                    ],
+                    "returns": "Any",
+                    "scopes": [],
+                    "static": true,
+                    "name": "iif"
+                }
+            ],
+            "name": "Core"
+        }
+    ]
+}
