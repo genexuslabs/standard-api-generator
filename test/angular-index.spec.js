@@ -37,8 +37,8 @@ testCases.forEach(testCase => {
     const expectedStr = fs.readFileSync(
       `test/${testCasesBaseDirectory}/${testCase.file_name}.index.ts.txt`,
       "utf8"
-    );
-    const resultStr = generator(metadata, options);
+    ).split(/\r?\n/);
+    const resultStr = generator(metadata, options).split(/\r?\n/);
     it(`should work`, () => {
       expect(resultStr).toEqual(expectedStr);
     });

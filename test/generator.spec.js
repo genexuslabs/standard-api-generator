@@ -68,10 +68,10 @@ testCases.forEach((testCase) => {
     const optionsFilePath = `./${testCasesBaseDirectory}/${testCase.file_name}.options.json`;
     const options = fs.existsSync(path.join(__dirname, optionsFilePath)) ? require(optionsFilePath) : {};
     const metadata = preprocessForTypescriptAPI(rawMetadata, options);
-    const expected = fs.readFileSync(`test/${testCasesBaseDirectory}/${testCase.file_name}.out.ts`, "utf8");
-    const result = generator(metadata, options);
+    const expected = fs.readFileSync(`test/${testCasesBaseDirectory}/${testCase.file_name}.out.ts`, "utf8").split(/\r?\n/);
+    const result = generator(metadata, options).split(/\r?\n/);
     it(`should work`, () => {
       expect(result).toEqual(expected);
     });
-  })
+  });
 });
