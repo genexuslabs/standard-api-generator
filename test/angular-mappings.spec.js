@@ -51,6 +51,10 @@ const testCases = [
   {
     file_name: "implemented-func-lowercase-name",
     description: "Implemented function with lowercase name"
+  },
+  {
+    file_name: "implemented-method-modifies-instance",
+    description: "Implemented method modifies its instance"
   }
 ];
 

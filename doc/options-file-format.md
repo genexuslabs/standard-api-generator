@@ -20,7 +20,7 @@ This file must be indicated in the options file as follows:
 
 ```json
 {
-    "metadataFilePath": "test/input_metadata.json"
+  "metadataFilePath": "test/input_metadata.json"
 }
 ```
 
@@ -35,7 +35,7 @@ These files are indicated with `"notImplementedOutputFilePath"`, `"angularMappin
 
 ```json
 {
-    "notImplementedOutputFilePath": "out/not_implemented.ts",
+  "notImplementedOutputFilePath": "out/not_implemented.ts",
 	"angularMappingsOutputFilePath": "out/angular_metadata.json",
 	"angularIndexOutputFilePath": "out/angular_index.ts",
 }
@@ -72,8 +72,8 @@ Indicates the path to the not-implemented functions.
 ```json
 {
 	"angularMappings": {
-        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
-    }
+    "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
+  }
 }
 ```
 
@@ -84,8 +84,8 @@ Indicates the path to the not-implemented functions.
 ```json
 {
 	"angularMappings": {
-        "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
-    }
+    "angularIndexPath": "@genexus/web-standard-functions/dist/lib-esm/index"
+  }
 }
 ```
 
@@ -151,7 +151,25 @@ Functions that publish an async message to be handled by the generator must decl
 					"notifiesGenerator": true
 				}
 			}
-		},
+		}
+	}
+}
+```
+
+Methods that modify the instance they act on, like the method `.FromString` for dates or numbers, have a special flag that indicates this: `"modifiesInstance": true`.
+
+```json
+{
+	"implemented": {
+		"Numeric": {
+			"members": {
+				"FromString": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/numeric/fromString",
+					"name": "msg",
+					"modifiesInstance": true
+				}
+			}
+		}
 	}
 }
 ```
@@ -162,9 +180,9 @@ Some methods and properties may not have an implementation in a given platform. 
 
 ```json
 {
-    "ignored": {
+  "ignored": {
 		"Core": ["metodo1", "metodo2"]
-    }
+  }
 }
 ```
 
@@ -176,7 +194,7 @@ In these cases, a disambiguation must be provided in the "disambiiguated" sectio
 
 ```json
 {
-    "disambiguated": {
+  "disambiguated": {
 		"GeneXus.SD.Media.Audio": {
 			"Play": "playAudio"
 		}

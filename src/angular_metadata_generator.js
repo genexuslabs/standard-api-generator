@@ -44,7 +44,8 @@ function generate(metadata, options) {
                   ? undefined
                   : angularIndexPath || methImpPath,
                 isStatic: meth.static ? true : undefined,
-                notifiesGenerator: meth.notifiesGenerator ? true : undefined
+                notifiesGenerator: meth.notifiesGenerator ? true : undefined,
+                modifiesInstance: meth.modifiesInstance ? true : undefined
               };
             })
           : undefined,

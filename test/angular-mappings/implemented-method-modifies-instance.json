@@ -1,0 +1,24 @@
+{
+    "definitions": [
+        {
+            "description": "",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [
+                      {
+                        "accesstype": "in",
+                        "description": "",
+                        "type": "String",
+                        "name": "Value"
+                      }
+                    ],
+                    "returns": "Any",
+                    "scopes": null,
+                    "name": "FromString"
+                }
+            ],
+            "name": "Numeric"
+        }
+    ]
+}

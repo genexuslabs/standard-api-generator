@@ -118,6 +118,7 @@ function addImplementedInfo(metadata, options) {
           resultMeth["implementationName"] = impInfo[mName].name;
           resultMeth["implementationAlias"] = impInfo[mName].alias;
           resultMeth["notifiesGenerator"] = impInfo[mName].notifiesGenerator;
+          resultMeth["modifiesInstance"] = impInfo[mName].modifiesInstance;
           isImplemented = true;
         }
         return resultMeth;
@@ -300,6 +301,7 @@ function getImplementedInfo(options) {
             name: members[memberKey].name,
             alias: members[memberKey].alias,
             notifiesGenerator: members[memberKey].notifiesGenerator,
+            modifiesInstance: members[memberKey].modifiesInstance,
             available: members[memberKey].available
           };
         }

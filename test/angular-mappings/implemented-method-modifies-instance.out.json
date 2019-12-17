@@ -1,0 +1,17 @@
+{
+    "modules": [
+        {
+            "name": "Numeric",
+            "generatesClass": false,
+            "methods": [
+                {
+                    "name": "FromString",
+                    "implementationName": "fromString",
+                    "externalName": "fromString",
+                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "modifiesInstance": true
+                }
+            ]
+        }
+    ]
+}
