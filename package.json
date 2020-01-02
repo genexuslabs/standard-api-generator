@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "cli": "^1.0.1",
-    "handlebars": "^4.1.2"
+    "handlebars": "^4.3.0"
   },
   "devDependencies": {
     "jest": "^24.8.0",
