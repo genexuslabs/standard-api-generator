@@ -55,6 +55,10 @@ const testCases = [
   {
     file_name: "implemented-method-modifies-instance",
     description: "Implemented method modifies its instance"
+  },
+  {
+    file_name: "implemented-property-as-method",
+    description: "Property implemented as method"
   }
 ];
 

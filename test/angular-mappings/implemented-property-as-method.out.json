@@ -1,0 +1,24 @@
+{
+    "modules": [
+        {
+            "name": "GeneXus.Client.ClientInformation",
+            "generatesClass": true,
+            "externalName": "GeneXusClientClientInformation",
+            "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information",
+            "methods": [
+                {
+                    "name": "OSName",
+                    "implementationName": "OSName",
+                    "externalName": "OSName",
+                    "isStatic": true
+                }
+            ],
+            "properties": [
+                {
+                    "name": "OSVersion",
+                    "unavailable": true
+                }
+            ]
+        }
+    ]
+}

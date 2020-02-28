@@ -22,43 +22,67 @@ function generate(metadata, options) {
       if (!impPath) {
         impPath = defaultImplementationPath;
       }
+
+      let methods = def.methods
+        ? def.methods.map(meth => {
+          let methImpPath = meth.implementationPath
+            ? meth.implementationPath
+            : defaultImplementationPath;
+          return {
+            name: meth.name,
+            implementationName: meth.implementationName
+              ? meth.implementationName
+              : sanitizeName(meth.name),
+            externalName: meth.implementationAlias
+              ? meth.implementationAlias
+              : sanitizeName(meth.name),
+            externalModuleName: genClass
+              ? undefined
+              : angularIndexPath || methImpPath,
+            isStatic: meth.static ? true : undefined,
+            notifiesGenerator: meth.notifiesGenerator ? true : undefined,
+            modifiesInstance: meth.modifiesInstance ? true : undefined
+          };
+        })
+        : undefined;
+
+      let properties = def.properties !== undefined && includeUnavailableProperties
+        ? def.properties.filter(prop => !prop.asMethod).map(prop => {
+          return {
+            name: prop.name,
+            unavailable:
+              prop.unavailable !== undefined ? prop.unavailable : true
+          };
+        })
+        : undefined;
+
+      let propsAsMethods = (def.properties !== undefined)
+        ? def.properties.filter(prop => prop.asMethod === true).map(prop => {
+          return {
+            name: prop.name,
+            implementationName: prop.name,
+            externalName: prop.name,
+            isStatic: true
+          };
+        })
+        : undefined;
+
+      if (propsAsMethods !== undefined && propsAsMethods.length > 0) {
+        if (!methods) {
+          methods = propsAsMethods
+        }
+        else {
+          methods.push(propsAsMethods);
+        }
+      }
+
       return {
         name: def.name,
         generatesClass: genClass,
         externalName: genClass ? sanitizeClassName(def.name) : undefined,
         externalModuleName: genClass ? angularIndexPath || impPath : undefined,
-        methods: def.methods
-          ? def.methods.map(meth => {
-              let methImpPath = meth.implementationPath
-                ? meth.implementationPath
-                : defaultImplementationPath;
-              return {
-                name: meth.name,
-                implementationName: meth.implementationName
-                  ? meth.implementationName
-                  : sanitizeName(meth.name),
-                externalName: meth.implementationAlias
-                  ? meth.implementationAlias
-                  : sanitizeName(meth.name),
-                externalModuleName: genClass
-                  ? undefined
-                  : angularIndexPath || methImpPath,
-                isStatic: meth.static ? true : undefined,
-                notifiesGenerator: meth.notifiesGenerator ? true : undefined,
-                modifiesInstance: meth.modifiesInstance ? true : undefined
-              };
-            })
-          : undefined,
-        properties:
-          def.properties !== undefined && includeUnavailableProperties
-            ? def.properties.map(prop => {
-                return {
-                  name: prop.name,
-                  unavailable:
-                    prop.unavailable !== undefined ? prop.unavailable : true
-                };
-              })
-            : undefined
+        methods: methods,
+        properties: properties
       };
     });
     return JSON.stringify({ modules: output });

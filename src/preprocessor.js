@@ -136,6 +136,7 @@ function addImplementedInfo(metadata, options) {
           else {
             resultProp["unavailable"] = true;
           }
+          resultProp["asMethod"] = impInfo[pName].asMethod;
         }
         return resultProp;
       });
@@ -302,7 +303,8 @@ function getImplementedInfo(options) {
             alias: members[memberKey].alias,
             notifiesGenerator: members[memberKey].notifiesGenerator,
             modifiesInstance: members[memberKey].modifiesInstance,
-            available: members[memberKey].available
+            available: members[memberKey].available,
+            asMethod: members[memberKey].asMethod
           };
         }
       } else {

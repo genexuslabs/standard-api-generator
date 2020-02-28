@@ -1,0 +1,24 @@
+{
+    "definitions": [
+        {
+            "description": "Client Information",
+            "properties": [
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "OSName"
+                },
+                {
+                    "description": "",
+                    "readonly": true,
+                    "static": true,
+                    "type": "String",
+                    "name": "OSVersion"
+                }
+            ],
+            "name": "GeneXus.Client.ClientInformation"
+        }
+    ]
+}

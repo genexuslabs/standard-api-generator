@@ -1,0 +1,18 @@
+{
+    "notImplementedSettings": {
+        "doNotGenerateClasses": true
+    },
+    "angularMappings": {
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information"
+    },
+    "implemented": {
+        "GeneXus.Client.ClientInformation": {
+            "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information",
+            "members": {
+                "OSName": {
+                    "asMethod": true
+                }
+            }
+        }
+    }
+}
