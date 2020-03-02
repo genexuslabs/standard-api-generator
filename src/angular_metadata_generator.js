@@ -60,8 +60,8 @@ function generate(metadata, options) {
         ? def.properties.filter(prop => prop.asMethod === true).map(prop => {
           return {
             name: prop.name,
-            implementationName: prop.name,
-            externalName: prop.name,
+            implementationName: sanitizeName(prop.name),
+            externalName: sanitizeName(prop.name),
             isStatic: true
           };
         })

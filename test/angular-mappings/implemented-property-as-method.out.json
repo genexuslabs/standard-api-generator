@@ -8,8 +8,8 @@
             "methods": [
                 {
                     "name": "OSName",
-                    "implementationName": "OSName",
-                    "externalName": "OSName",
+                    "implementationName": "oSName",
+                    "externalName": "oSName",
                     "isStatic": true
                 }
             ],
