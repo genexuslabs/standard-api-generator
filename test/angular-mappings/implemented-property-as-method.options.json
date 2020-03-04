@@ -3,7 +3,7 @@
         "doNotGenerateClasses": true
     },
     "angularMappings": {
-        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information"
+        "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/not-implemented"
     },
     "implemented": {
         "GeneXus.Client.ClientInformation": {

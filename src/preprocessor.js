@@ -307,9 +307,12 @@ function getImplementedInfo(options) {
             asMethod: members[memberKey].asMethod
           };
         }
-      } else {
+      }
+      
+      let path = options.implemented[entryKey].path
+      if (path) {
         implemented[entryKey] = {
-          path: options.implemented[entryKey].path
+          path: path
         };
       }
     }
