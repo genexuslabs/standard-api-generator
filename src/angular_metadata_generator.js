@@ -72,7 +72,7 @@ function generate(metadata, options) {
           methods = propsAsMethods
         }
         else {
-          methods.push(propsAsMethods);
+          methods = methods.concat(propsAsMethods);
         }
       }
 

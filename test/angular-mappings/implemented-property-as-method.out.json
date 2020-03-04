@@ -7,6 +7,12 @@
             "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information",
             "methods": [
                 {
+                    "name": "IsEmpty",
+                    "implementationName": "isEmpty",
+                    "externalName": "isEmpty",
+                    "isStatic": true
+                },
+                {
                     "name": "OSName",
                     "implementationName": "oSName",
                     "externalName": "oSName",

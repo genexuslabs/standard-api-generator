@@ -2,6 +2,16 @@
     "definitions": [
         {
             "description": "Client Information",
+            "methods": [
+                {
+                    "description": "",
+                    "parameters": [],
+                    "returns": "Boolean",
+                    "scopes": null,
+                    "name": "IsEmpty",
+                    "static": true
+                  }
+            ],
             "properties": [
                 {
                     "description": "",
