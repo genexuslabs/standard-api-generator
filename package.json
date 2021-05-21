@@ -26,14 +26,15 @@
     "handlebars": "^4.7.7"
   },
   "devDependencies": {
-    "jest": "^24.8.0",
-    "jest-cli": "^24.8.0",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.0",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^8.0.1",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.1",
+    "yargs-parser": ">=13.1.2"
   },
   "jest": {
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?)$",
