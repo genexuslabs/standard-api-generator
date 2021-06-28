@@ -119,6 +119,7 @@ function addImplementedInfo(metadata, options) {
           resultMeth["implementationAlias"] = impInfo[mName].alias;
           resultMeth["notifiesGenerator"] = impInfo[mName].notifiesGenerator;
           resultMeth["modifiesInstance"] = impInfo[mName].modifiesInstance;
+          resultMeth["isAsync"] = impInfo[mName].isAsync;
           isImplemented = true;
         }
         return resultMeth;
@@ -304,7 +305,8 @@ function getImplementedInfo(options) {
             notifiesGenerator: members[memberKey].notifiesGenerator,
             modifiesInstance: members[memberKey].modifiesInstance,
             available: members[memberKey].available,
-            asMethod: members[memberKey].asMethod
+            asMethod: members[memberKey].asMethod,
+            isAsync: members[memberKey].isAsync,
           };
         }
       }

@@ -41,7 +41,8 @@ function generate(metadata, options) {
               : angularIndexPath || methImpPath,
             isStatic: meth.static ? true : undefined,
             notifiesGenerator: meth.notifiesGenerator ? true : undefined,
-            modifiesInstance: meth.modifiesInstance ? true : undefined
+            modifiesInstance: meth.modifiesInstance ? true : undefined,
+            isAsync: meth.isAsync ? true : undefined
           };
         })
         : undefined;

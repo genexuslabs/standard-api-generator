@@ -1,0 +1,44 @@
+{
+    "definitions": [
+      {
+        "description": "Geolocation",
+        "methods": [
+          {
+            "description": "Returns the current location for the device",
+            "parameters": [
+              {
+                "accesstype": "in",
+                "description": "Minimum precision required to obtain the location, in meters",
+                "type": "Any",
+                "name": "minAccuracy"
+              },
+              {
+                "accesstype": "in",
+                "description": "Maximum time to wait in seconds, to obtain the desired accuracy",
+                "type": "Any",
+                "name": "timeout"
+              },
+              {
+                "accesstype": "in",
+                "description": "Indicates if it is necessary to include the heading and speed information",
+                "type": "Boolean",
+                "name": "includeHeadingAndSpeed"
+              },
+              {
+                "accesstype": "in",
+                "description": "If set to true, following actions in a composite block will be executed, regardless of the execution status of this method",
+                "type": "Boolean",
+                "name": "ignoreErrors"
+              }
+            ],
+            "returns": "GeneXus.Common.GeolocationInfo",
+            "scopes": null,
+            "static": true,
+            "name": "GetMyLocation"
+          }
+        ],
+        "name": "GeneXus.Common.Geolocation"
+      }
+    ]
+  }
+  
