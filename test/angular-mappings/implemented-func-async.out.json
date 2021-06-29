@@ -1,0 +1,19 @@
+{
+    "modules": [
+        {
+            "name": "GeneXus.Common.Geolocation",
+            "generatesClass": true,
+            "externalName": "GeneXusCommonGeolocation",
+            "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/geolocation",
+            "methods": [
+                {
+                    "name": "GetMyLocation",
+                    "implementationName": "getMyLocation",
+                    "externalName": "getMyLocation",
+                    "isStatic": true,
+                    "isAsync": true
+                }
+            ]
+        }
+    ]
+}

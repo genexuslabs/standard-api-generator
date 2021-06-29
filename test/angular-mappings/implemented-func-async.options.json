@@ -1,0 +1,13 @@
+{
+    "implemented": {
+        "GeneXus.Common.Geolocation": {
+            "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/geolocation",
+            "members": {
+                "GetMyLocation": {
+                    "name": "getMyLocation",
+                    "isAsync": true
+                }
+            }
+        }
+    }
+}

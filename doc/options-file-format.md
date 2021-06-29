@@ -156,6 +156,24 @@ Functions that publish an async message to be handled by the generator must decl
 }
 ```
 
+Async functions/members that can be awaited must declare that information.
+
+```json
+{
+	"implemented": {
+		"GeneXus.SD.Media.Camera": {
+			"members": {
+				"TakePhoto": {
+					"path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/media/camera/takePhoto",
+					"name": "takePhoto",
+					"isAsync": true
+				}
+			}
+		}
+	}
+}
+```
+
 Methods that modify the instance they act on, like the method `.FromString` for dates or numbers, have a special flag that indicates this: `"modifiesInstance": true`.
 
 ```json
