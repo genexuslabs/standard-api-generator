@@ -1,0 +1,89 @@
+    {{#if validate1}}
+    //********************//
+    //********WRN********//
+    The name in option doesn't exist in metadata. Check.
+    {{#each validate1}}
+    {{this.entryKey}} --- {{this.method}}
+    {{/each}}
+    {{/if}}
+
+    {{#if validate2}}
+    //********************//
+    //*******ERROR*******//
+    Same name of method in option. You need to add an alias.
+    {{#each validate2}}
+    {{this.entryKey}} --- {{this.name}} --- {{this.path}}
+    {{/each}}
+
+    {{/if}}
+
+    //**********************//
+    //*****IMPLEMENTED*****//
+    //********************//
+{{#each aux}}
+    {{#unless this.class}}
+    {{#if this.alias}}
+    import { {{this.name}} as {{this.alias}} } from '{{this.path}}';  //Alias
+    {{else}}
+    import { {{this.name}} } from '{{this.path}}';
+    {{/if}}
+    {{else}}
+    import { {{sanitizeClassName this.name}} } from '{{this.path}}';  //Class
+    {{/unless}}
+{{/each}}
+    //**********************//
+    //***NOT IMPLEMENTED***//
+    //********************//
+
+{{#each notImplemented.definitions}}
+    //**********************//
+    //****{{this.name}}****//
+    {{#if this.methods}}
+    {{#unless this.generateClass}}
+    {{#each this.methods}}
+    import { {{#if implementationName}}{{sanitizeName implementationName}}{{else}}{{sanitizeName name}}{{/if}} } from './dist/lib-esm/generator/out/not_implemented';
+    {{/each}}
+
+    {{/unless}}
+    {{/if}}
+{{/each}}
+
+
+export{
+    //**********************//
+    //*****IMPLEMENTED*****//
+    //********************//
+    {{#each aux}}
+    {{#unless this.class}}
+    {{#if this.alias}}
+    {{this.alias}},
+    {{else}}
+    {{this.name}},
+    {{/if}}
+    {{else}}
+    {{sanitizeClassName this.name}},
+    {{/unless}}
+    {{/each}}
+
+
+    //**********************//
+    //***NOT IMPLEMENTED***//
+    //********************//
+
+    {{#each notImplemented.definitions}}
+    {{#if this.methods}}
+    {{#unless this.generateClass}}
+    {{#each this.methods}}
+    {{#if implementationName}}{{sanitizeName implementationName}}{{else}}{{sanitizeName name}}{{/if}},
+    {{/each}}
+    
+    {{/unless}}
+    {{/if}}
+    {{/each}}
+
+
+
+}
+
+
+

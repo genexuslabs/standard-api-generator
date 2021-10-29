@@ -7,7 +7,8 @@ function generate(metadata, options) {
   let defaultImplementationPath;
   if (options.angularMappings) {
     defaultImplementationPath = options.angularMappings.defaultModulesPath;
-    angularIndexPath = options.angularMappings.angularIndexPath;
+    //angularIndexPath = options.angularMappings.angularIndexPath;
+    angularIndexPath = options["externalModuleName"]//'@genexus/web-standard-functions'
   }
 
   let includeUnavailableProperties =

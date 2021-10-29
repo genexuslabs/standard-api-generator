@@ -469,9 +469,186 @@ function transformAttributeAndVariableMethods(metadata, options) {
   return resultMetadata;
 }
 
+
+//Checks that there aren't members in options that are not in the metadata
+ function validate1(options,rawMetadata){
+  let validate = []
+
+  let methodsMetadata = []
+  
+      for(let cat in rawMetadata.definitions){
+        for(let met in rawMetadata.definitions[cat].methods){
+          methodsMetadata.push(rawMetadata.definitions[cat].methods[met].name)
+        } 
+      }
+ 
+      if (options.implemented) {
+        for (let entryKey in options.implemented) {
+        
+          let members = options.implemented[entryKey].members;
+        
+          if (members) {
+
+          for (let memberKey in members){
+          
+          if(members[memberKey].path){
+            if(methodsMetadata.find(element => element === memberKey) === undefined){
+              validate.push({"method":memberKey, "entryKey": entryKey})
+            }
+          }
+          }
+          }
+
+        }
+      }
+      return validate
+  }
+
+  //Has the same name, hasn't got an alias nor the same path
+  function validate2(options){
+    let validate = []
+
+    if (options.implemented) {
+      let aux = []
+      let aux2 = []
+      for (let entryKey in options.implemented) {
+  
+        let members = options.implemented[entryKey].members;
+    
+        if (members) {
+
+        for (let memberKey in members){
+          let index = aux.findIndex(element => element.name === members[memberKey].name)
+          if(index === -1){
+              aux.push({"path":members[memberKey].path, "name":members[memberKey].name})
+
+          }else{
+
+              if(members[memberKey].path && members[memberKey].name){
+
+                if(!members[memberKey].alias){
+                  aux2.push(aux[index])
+                  if(aux2.findIndex(element => element.path === members[memberKey].path) === -1){
+                    validate.push({"entryKey":entryKey,"name":members[memberKey].name,"path":members[memberKey].path})
+                  }
+                }
+              }
+          }
+        }
+      }
+    }
+    }
+    return validate
+  }
+  
+
+function getInfoForIndex(options){
+  
+  if (options.implemented) {
+      let aux = []
+
+      for (let entryKey in options.implemented) {
+
+        let members = options.implemented[entryKey].members;
+        let pathGeneral = options.implemented[entryKey].path
+        
+        //***without members****//
+        if(pathGeneral){
+          if(aux.findIndex(aux => aux.path === pathGeneral) === -1){
+            
+            pathGeneral = pathGeneral.replace("@genexus/web-standard-functions", ".")
+            aux.push({
+              "path": pathGeneral,
+              "name": entryKey,
+              "alias": null,
+              "class": true
+            })
+          }
+        }
+        //***********//
+      
+        //****with members****//
+        if (members) {
+          for (let memberKey in members) { 
+            
+            if(members[memberKey].path !== undefined && members[memberKey].name !==undefined){
+              
+              let path = members[memberKey].path
+              path = path.replace("@genexus/web-standard-functions", ".")
+
+              if(aux.findIndex(aux => aux.path === path) === -1 && !members[memberKey].notifiesGenerator){
+                
+                if(members[memberKey].alias){
+                      aux.push({
+                        "path": path,
+                        "name": members[memberKey].name,
+                        "alias": members[memberKey].alias,
+                        "class": false
+                      })
+                }else{
+                      aux.push({
+                        "path": path,
+                        "name": members[memberKey].name,
+                        "alias": null,
+                        "class": false
+                      })
+                }
+              }
+
+              //****NOTIFIES GENERATOR TRUE****//
+              if(members[memberKey].notifiesGenerator && aux.findIndex(aux => aux.name === members[memberKey].name) === -1){
+               
+                if(members[memberKey].alias){
+                  aux.push({
+                    "path": path,
+                    "name": members[memberKey].name,
+                    "alias": members[memberKey].alias,
+                    "class": false
+                  })
+              }else{
+                  aux.push({
+                    "path": path,
+                    "name": members[memberKey].name,
+                    "alias": null,
+                    "class": false
+                  })
+              }
+
+              }
+            //*******************************//
+
+            } 
+            
+              //****define but not implemented****//
+              if(aux.findIndex(aux => aux.name === entryKey) === -1){
+              if(!members[memberKey].path && !pathGeneral && members[memberKey].name){
+
+                aux.push({
+                  "path": './dist/lib-esm/generator/out/not_implemented',
+                  "name": entryKey,
+                  "alias": null,
+                  "class": true
+                })
+              }
+              } 
+              //*******************//
+            }
+        }
+      }
+      return aux;
+  } 
+}
+
+
+
+
+
 module.exports = {
   preprocessForTypescriptAPI: preprocessForTypescriptAPI,
   preprocessForAngularMetadata: preprocessForAngularMetadata,
   mergeOverloadedMethods: mergeOverloadedMethods,
-  transformAttributeAndVariableMethods: transformAttributeAndVariableMethods
-};
+  transformAttributeAndVariableMethods: transformAttributeAndVariableMethods,
+  getInfoForIndex: getInfoForIndex,
+  validate1: validate1,
+  validate2: validate2
+  };
