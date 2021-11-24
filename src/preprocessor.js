@@ -504,6 +504,56 @@ function transformAttributeAndVariableMethods(metadata, options) {
       return validate
   }
 
+  function addOptionsNotMetadata(options,rawMetadata){
+
+    let aux = []
+    
+  
+    let methodsMetadata = []
+    
+        for(let cat in rawMetadata.definitions){
+          for(let met in rawMetadata.definitions[cat].methods){
+            methodsMetadata.push(rawMetadata.definitions[cat].methods[met].name)
+          } 
+        }
+   
+        if (options.implemented) {
+          for (let entryKey in options.implemented) {
+            let aux2 = []
+            let members = options.implemented[entryKey].members;
+          
+            if (members) {
+            
+              for (let memberKey in members){
+
+                if(members[memberKey].path){
+                  if(methodsMetadata.find(element => element === memberKey) === undefined){
+                    if(aux2.findIndex(aux => aux.name === members[memberKey].name) === -1){
+                      
+                      aux2.push(options.implemented[entryKey].members[memberKey])
+
+                      if(aux.findIndex(aux => aux.name === entryKey) === -1){
+                      
+                        aux.push({
+                          description: '',
+                          methods: aux2,
+                          name: entryKey,
+                        }) 
+                      }
+                    
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        return aux
+    }
+  
+
+
+
   //Has the same name, hasn't got an alias nor the same path
   function validate2(options){
     let validate = []
@@ -542,10 +592,18 @@ function transformAttributeAndVariableMethods(metadata, options) {
   }
   
 
-function getInfoForIndex(options){
+function getInfoForIndex(options,rawMetadata){
   
   if (options.implemented) {
       let aux = []
+
+      let methodsMetadata = []
+  
+      for(let cat in rawMetadata.definitions){
+        for(let met in rawMetadata.definitions[cat].methods){
+          methodsMetadata.push(rawMetadata.definitions[cat].methods[met].name)
+        } 
+      }
 
       for (let entryKey in options.implemented) {
 
@@ -597,7 +655,7 @@ function getInfoForIndex(options){
 
               //****NOTIFIES GENERATOR TRUE****//
               if(members[memberKey].notifiesGenerator && aux.findIndex(aux => aux.name === members[memberKey].name) === -1){
-               
+
                 if(members[memberKey].alias){
                   aux.push({
                     "path": path,
@@ -616,6 +674,22 @@ function getInfoForIndex(options){
 
               }
             //*******************************//
+
+ 
+          //******Exist in option but not in metadata*******//
+          if(members[memberKey].path){
+            if(methodsMetadata.find(element => element === memberKey) === undefined){
+              if(aux.findIndex(aux => aux.name === members[memberKey].name) === -1){
+                aux.push({
+                  "path": path,
+                  "name": members[memberKey].name,
+                  "alias": null,
+                  "class": false
+                })
+              }
+            }
+          }
+          //*****************************//
 
             } 
             
@@ -650,5 +724,6 @@ module.exports = {
   transformAttributeAndVariableMethods: transformAttributeAndVariableMethods,
   getInfoForIndex: getInfoForIndex,
   validate1: validate1,
-  validate2: validate2
+  validate2: validate2,
+  addOptionsNotMetadata: addOptionsNotMetadata
   };

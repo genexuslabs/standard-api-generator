@@ -8,7 +8,7 @@
                     "name": "Str",
                     "implementationName": "toString",
                     "externalName": "number_toString",
-                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "externalModuleName": "@genexus/web-standard-functions",
                     "isStatic": true
                 }
             ]

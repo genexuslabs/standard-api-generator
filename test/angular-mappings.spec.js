@@ -3,7 +3,7 @@
 const generator = require("../src/angular_metadata_generator");
 const fs = require("fs");
 const path = require("path");
-const { preprocessForAngularMetadata } = require("../src/preprocessor");
+const { preprocessForAngularMetadata,addOptionsNotMetadata } = require("../src/preprocessor");
 
 const testCasesBaseDirectory = "angular-mappings";
 
@@ -63,6 +63,10 @@ const testCases = [
   {
     file_name: "implemented-property-as-method",
     description: "Property implemented as method"
+  },
+  {
+    file_name: "exist-in-option-not-in-metadata",
+    description: "Exist in option but not in metadata"
   }
 ];
 
@@ -78,6 +82,11 @@ testCases.forEach(testCase => {
       ? require(optionsFilePath)
       : {};
     const metadata = preprocessForAngularMetadata(rawMetadata, options);
+
+    addOptionsNotMetadata(options,rawMetadata).map(element => {
+      metadata.definitions.push(element)
+    })
+
     const expectedStr = fs.readFileSync(
       `test/${testCasesBaseDirectory}/${testCase.file_name}.out.json`,
       "utf8"

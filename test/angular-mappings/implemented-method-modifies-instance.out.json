@@ -8,7 +8,7 @@
                     "name": "FromString",
                     "implementationName": "fromString",
                     "externalName": "fromString",
-                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "externalModuleName": "@genexus/web-standard-functions",
                     "modifiesInstance": true
                 }
             ]

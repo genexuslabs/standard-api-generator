@@ -12,7 +12,8 @@ const {
   transformAttributeAndVariableMethods,
   getInfoForIndex,
   validate1,
-  validate2
+  validate2,
+  addOptionsNotMetadata
 
 } = require("./src/preprocessor");
 
@@ -46,6 +47,12 @@ generateOutput(
 
 const mappingsMetadata = preprocessForAngularMetadata(transformedMetadata, options);
 
+
+addOptionsNotMetadata(options,rawMetadata).map(element => {
+  mappingsMetadata.definitions.push(element)
+})
+
+
 generateOutput(
   options["angularMappingsOutputFilePath"],
   generateAngularMetadata,
@@ -59,7 +66,7 @@ generateOutput(
 );
 
 
-var aux = {"aux": getInfoForIndex(options), "notImplemented": tsAPIMetadata, "validate1": validate1(options,rawMetadata), "validate2": validate2(options)}
+var aux = {"aux": getInfoForIndex(options,rawMetadata), "notImplemented": tsAPIMetadata, "validate1": validate1(options,rawMetadata), "validate2": validate2(options)}
 
 generateOutput(
   options["indexOutputFilePath"],
