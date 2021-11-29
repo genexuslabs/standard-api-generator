@@ -8,7 +8,7 @@
                     "name": "iif",
                     "implementationName": "iif",
                     "externalName": "iif",
-                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "externalModuleName": "@genexus/web-standard-functions",
                     "isStatic": true
                 }
             ]

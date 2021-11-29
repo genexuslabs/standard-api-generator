@@ -8,7 +8,7 @@
                     "name": "Msg",
                     "implementationName": "msg",
                     "externalName": "msg",
-                    "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+                    "externalModuleName": "@genexus/web-standard-functions",
                     "isStatic": true,
                     "notifiesGenerator": true
                 }

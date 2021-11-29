@@ -4,7 +4,7 @@
       "name": "Boolean",
       "generatesClass": true,
       "externalName": "Boolean",
-      "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
+      "externalModuleName": "@genexus/web-standard-functions",
       "methods": [
         {
           "name": "IsEmpty",

@@ -1,0 +1,1908 @@
+{
+  "metadataFilePath": "../../src/generator/metadata.json",
+  "notImplementedOutputFilePath": "../../src/generator/out/not_implemented.ts",
+  "angularMappingsOutputFilePath": "../../src/generator/out/angular_metadata.json",
+  "indexOutputFilePath": "../../index.js",
+  "externalModuleName": "@genexus/web-standard-functions",
+  "notImplementedSettings": {
+    "doNotGenerateClasses": true
+  },
+  "angularMappings": {
+    "defaultModulesPath": "@genexus/web-standard-functions/dist/lib-esm/generator/out/not_implemented"
+  },
+  "implemented": {
+    "Cookie": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/types/cookie"
+    },
+    "Core": {
+      "members": {
+        "Asc": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/asc",
+          "name": "asc"
+        },
+        "AddMth": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addMonths",
+          "name": "addMonths"
+        },
+        "AddYr": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addYears",
+          "name": "addYears"
+        },
+        "Age": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/age",
+          "name": "age"
+        },
+        "BrowserID": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/web/browserId",
+          "name": "browserId"
+        },
+        "BrowserVersion": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/web/browserVersion",
+          "name": "browserVersion"
+        },
+        "CDoW": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeekName",
+          "name": "dayOfWeekName"
+        },
+        "Chr": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/chr",
+          "name": "chr"
+        },
+        "CMonth": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/monthName",
+          "name": "monthName"
+        },
+        "Compare": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/compare",
+          "name": "compare"
+        },
+        "Concat": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/concat",
+          "name": "concat"
+        },
+        "Confirm": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/confirm",
+          "name": "confirm",
+          "notifiesGenerator": true
+        },
+        "CtoD": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/fromString",
+          "name": "fromString",
+          "alias": "dFromString"
+        },
+        "CtoT": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/fromString",
+          "name": "fromString",
+          "alias": "dFromString"
+        },
+        "Day": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/day",
+          "name": "day"
+        },
+        "DoW": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeek",
+          "name": "dayOfWeek"
+        },
+        "DtoC": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/toString",
+          "name": "toString",
+          "alias": "dToString"
+        },
+        "EoM": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/endOfMonth",
+          "name": "endOfMonth"
+        },
+        "Format": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/format",
+          "name": "format"
+        },
+        "FromBase64": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromBase64",
+          "name": "fromBase64"
+        },
+        "GetCookie": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/web/getCookie",
+          "name": "getCookie"
+        },
+        "GetLanguage": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/getLanguage",
+          "name": "getLanguage"
+        },
+        "GetMessageText": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/getMessageText",
+          "name": "getMessageText"
+        },
+        "Hour": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/hour",
+          "name": "hour"
+        },
+        "iif": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/iif",
+          "name": "iif"
+        },
+        "Int": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/integer",
+          "name": "integer"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "Len": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/length",
+          "name": "length"
+        },
+        "Lower": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toLower",
+          "name": "toLower"
+        },
+        "LTrim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lTrim",
+          "name": "ltrim"
+        },
+        "Minute": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/minute",
+          "name": "minute"
+        },
+        "Mod": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/math/mod",
+          "name": "mod"
+        },
+        "Month": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/month",
+          "name": "month"
+        },
+        "Msg": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/msg",
+          "name": "msg",
+          "notifiesGenerator": true
+        },
+        "NewLine": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/newline",
+          "name": "newLine"
+        },
+        "Now": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/now",
+          "name": "now"
+        },
+        "Null": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isEmpty",
+          "name": "isEmpty"
+        },
+        "NullValue": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/emptyValue",
+          "name": "emptyValue"
+        },
+        "PadL": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padLeft",
+          "name": "padLeft"
+        },
+        "PadR": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padRight",
+          "name": "padRight"
+        },
+        "Random": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/math/random",
+          "name": "random"
+        },
+        "Round": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/round",
+          "name": "round"
+        },
+        "RoundToEven": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/roundToEven",
+          "name": "roundToEven"
+        },
+        "RTrim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/rTrim",
+          "name": "rTrim"
+        },
+        "Second": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/second",
+          "name": "second"
+        },
+        "SetCookie": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/web/setCookie",
+          "name": "setCookie"
+        },
+        "SetLanguage": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/setLanguage",
+          "name": "setLanguage"
+        },
+        "Space": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/space",
+          "name": "space"
+        },
+        "Str": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/str",
+          "name": "str"
+        },
+        "StrReplace": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replace",
+          "name": "replace"
+        },
+        "StrSearch": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/indexOf",
+          "name": "indexOf"
+        },
+        "StrSearchRev": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lastIndexOf",
+          "name": "lastIndexOf"
+        },
+        "SubStr": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/subString",
+          "name": "subString"
+        },
+        "TAdd": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/addSeconds",
+          "name": "addSeconds"
+        },
+        "TDiff": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/difference",
+          "name": "difference"
+        },
+        "Time": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/time",
+          "name": "time"
+        },
+        "ToBase64": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toBase64",
+          "name": "toBase64"
+        },
+        "Today": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/today",
+          "name": "today"
+        },
+        "Trim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/trim",
+          "name": "trim"
+        },
+        "Trunc": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/truncate",
+          "name": "truncate"
+        },
+        "TtoC": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/toString",
+          "name": "toString",
+          "alias": "dtToString"
+        },
+        "Upper": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toUpper",
+          "name": "toUpper"
+        },
+        "Val": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toNumeric",
+          "name": "toNumeric"
+        },
+        "XSLTApply": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/xsltApply",
+          "name": "xsltApply"
+        },
+        "Year": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/year",
+          "name": "year"
+        },
+        "YMDtoD": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/newInstance",
+          "name": "newInstance",
+          "alias": "dNewInstance"
+        },
+        "YMDHMStoT": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/newInstance",
+          "name": "newInstance",
+          "alias": "dtNewInstance"
+        }
+      }
+    },
+    "Character": {
+      "members": {
+        "CharAt": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/charAt",
+          "name": "charAt"
+        },
+        "Contains": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/contains",
+          "name": "contains"
+        },
+        "EndsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/endsWith",
+          "name": "endsWith"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "alias": "tFromString",
+          "modifiesInstance": true
+        },
+        "IndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/indexOf",
+          "name": "indexOf"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsMatch": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isMatch",
+          "name": "isMatch"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "LastIndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lastIndexOf",
+          "name": "lastIndexOf"
+        },
+        "Length": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/length",
+          "name": "length"
+        },
+        "Matches": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/matches",
+          "name": "matches"
+        },
+        "PadLeft": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padLeft",
+          "name": "padLeft"
+        },
+        "PadRight": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padRight",
+          "name": "padRight"
+        },
+        "RemoveDiacritics": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/removeDiacritics",
+          "name": "removeDiacritics"
+        },
+        "Replace": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replace",
+          "name": "replace"
+        },
+        "ReplaceRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replaceRegExp",
+          "name": "replaceRegExp"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SplitRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/splitRegExp",
+          "name": "splitRegExp"
+        },
+        "StartsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/startsWith",
+          "name": "startsWith"
+        },
+        "Substring": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/subString",
+          "name": "subString"
+        },
+        "ToLower": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toLower",
+          "name": "toLower"
+        },
+        "ToNumeric": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toNumeric",
+          "name": "toNumeric"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToUpper": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toUpper",
+          "name": "toUpper"
+        },
+        "Trim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/trim",
+          "name": "trim"
+        },
+        "TrimEnd": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/rTrim",
+          "name": "rTrim"
+        },
+        "TrimStart": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lTrim",
+          "name": "ltrim"
+        },
+        "XSLTApply": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/xsltApply",
+          "name": "xsltApply"
+        }
+      }
+    },
+    "Varchar": {
+      "members": {
+        "CharAt": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/charAt",
+          "name": "charAt"
+        },
+        "Contains": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/contains",
+          "name": "contains"
+        },
+        "EndsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/endsWith",
+          "name": "endsWith"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/indexOf",
+          "name": "indexOf"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsMatch": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isMatch",
+          "name": "isMatch"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "LastIndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lastIndexOf",
+          "name": "lastIndexOf"
+        },
+        "Length": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/length",
+          "name": "length"
+        },
+        "Matches": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/matches",
+          "name": "matches"
+        },
+        "PadLeft": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padLeft",
+          "name": "padLeft"
+        },
+        "PadRight": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padRight",
+          "name": "padRight"
+        },
+        "RemoveDiacritics": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/removeDiacritics",
+          "name": "removeDiacritics"
+        },
+        "Replace": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replace",
+          "name": "replace"
+        },
+        "ReplaceRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replaceRegExp",
+          "name": "replaceRegExp"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SplitRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/splitRegExp",
+          "name": "splitRegExp"
+        },
+        "StartsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/startsWith",
+          "name": "startsWith"
+        },
+        "Substring": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/subString",
+          "name": "subString"
+        },
+        "ToLower": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toLower",
+          "name": "toLower"
+        },
+        "ToNumeric": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toNumeric",
+          "name": "toNumeric"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToUpper": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toUpper",
+          "name": "toUpper"
+        },
+        "Trim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/trim",
+          "name": "trim"
+        },
+        "TrimEnd": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/rTrim",
+          "name": "rTrim"
+        },
+        "TrimStart": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lTrim",
+          "name": "ltrim"
+        },
+        "XSLTApply": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/xsltApply",
+          "name": "xsltApply"
+        }
+      }
+    },
+    "LongVarchar": {
+      "members": {
+        "CharAt": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/charAt",
+          "name": "charAt"
+        },
+        "Contains": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/contains",
+          "name": "contains"
+        },
+        "EndsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/endsWith",
+          "name": "endsWith"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/indexOf",
+          "name": "indexOf"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsMatch": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isMatch",
+          "name": "isMatch"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "LastIndexOf": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lastIndexOf",
+          "name": "lastIndexOf"
+        },
+        "Length": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/length",
+          "name": "length"
+        },
+        "Matches": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/matches",
+          "name": "matches"
+        },
+        "PadLeft": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padLeft",
+          "name": "padLeft"
+        },
+        "PadRight": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/padRight",
+          "name": "padRight"
+        },
+        "RemoveDiacritics": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/removeDiacritics",
+          "name": "removeDiacritics"
+        },
+        "Replace": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replace",
+          "name": "replace"
+        },
+        "ReplaceRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/replaceRegExp",
+          "name": "replaceRegExp"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SplitRegEx": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/splitRegExp",
+          "name": "splitRegExp"
+        },
+        "StartsWith": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/startsWith",
+          "name": "startsWith"
+        },
+        "Substring": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/subString",
+          "name": "subString"
+        },
+        "ToLower": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toLower",
+          "name": "toLower"
+        },
+        "ToNumeric": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toNumeric",
+          "name": "toNumeric"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToUpper": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toUpper",
+          "name": "toUpper"
+        },
+        "Trim": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/trim",
+          "name": "trim"
+        },
+        "TrimEnd": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/rTrim",
+          "name": "rTrim"
+        },
+        "TrimStart": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/lTrim",
+          "name": "ltrim"
+        },
+        "XSLTApply": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/xsltApply",
+          "name": "xsltApply"
+        }
+      }
+    },
+    "Boolean": {
+      "members": {
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/isEmpty",
+          "name": "isEmpty",
+          "alias": "bIsEmpty"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/fromString",
+          "name": "fromString",
+          "alias": "bFromString",
+          "modifiesInstance": true
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "bSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "bSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/toString",
+          "name": "toString",
+          "alias": "bToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/bool/toString",
+          "name": "toString",
+          "alias": "bToString"
+        }
+      }
+    },
+    "GUID": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/types/guid"
+    },
+    "Numeric": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/fromString",
+          "name": "fromString",
+          "alias": "nFromString",
+          "modifiesInstance": true
+        },
+        "Integer": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/integer",
+          "name": "integer"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/isEmpty",
+          "name": "isEmpty",
+          "alias": "nIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "Round": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/round",
+          "name": "round"
+        },
+        "RoundToEven": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/roundToEven",
+          "name": "roundToEven"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "nSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "nSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/toString",
+          "name": "toString",
+          "alias": "nToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/toString",
+          "name": "toString",
+          "alias": "nToString"
+        },
+        "Truncate": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/numeric/truncate",
+          "name": "truncate"
+        }
+      }
+    },
+    "Date": {
+      "members": {
+        "AddDays": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addDays",
+          "name": "addDays"
+        },
+        "AddMonths": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addMonths",
+          "name": "addMonths"
+        },
+        "AddYears": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addYears",
+          "name": "addYears"
+        },
+        "Age": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/age",
+          "name": "age"
+        },
+        "Day": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/day",
+          "name": "day"
+        },
+        "DayOfWeek": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeek",
+          "name": "dayOfWeek"
+        },
+        "DayOfWeekName": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeekName",
+          "name": "dayOfWeekName"
+        },
+        "EndOfMonth": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/endOfMonth",
+          "name": "endOfMonth"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "dFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/isEmpty",
+          "name": "isEmpty",
+          "alias": "dIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "Month": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/month",
+          "name": "month"
+        },
+        "MonthName": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/monthName",
+          "name": "monthName"
+        },
+        "New": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/newInstance",
+          "name": "newInstance",
+          "alias": "dNewInstance"
+        },
+        "Set": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/set",
+          "name": "set",
+          "alias": "dSet"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "dtSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "dtSetEmpty"
+        },
+        "ToDate": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/toDate",
+          "name": "toDate",
+          "alias": "dToDate"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/toString",
+          "name": "toString",
+          "alias": "dToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/toString",
+          "name": "toString",
+          "alias": "dToString"
+        },
+        "Year": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/year",
+          "name": "year"
+        }
+      }
+    },
+    "DateTime": {
+      "members": {
+        "AddDays": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addDays",
+          "name": "addDays"
+        },
+        "AddHours": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/addHours",
+          "name": "addHours"
+        },
+        "AddMilliseconds": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/addMilliseconds",
+          "name": "addMilliseconds"
+        },
+        "AddMinutes": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/addMinutes",
+          "name": "addMinutes"
+        },
+        "AddMonths": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addMonths",
+          "name": "addMonths"
+        },
+        "AddSeconds": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/addSeconds",
+          "name": "addSeconds"
+        },
+        "AddYears": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/addYears",
+          "name": "addYears"
+        },
+        "Age": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/age",
+          "name": "age"
+        },
+        "CurrentOffset": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/currentOffset",
+          "name": "currentOffset"
+        },
+        "Day": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/day",
+          "name": "day"
+        },
+        "DayOfWeek": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeek",
+          "name": "dayOfWeek"
+        },
+        "DayOfWeekName": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/dayOfWeekName",
+          "name": "dayOfWeekName"
+        },
+        "Difference": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/difference",
+          "name": "difference"
+        },
+        "EndOfMonth": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/endOfMonth",
+          "name": "endOfMonth"
+        },
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/fromString",
+          "name": "fromString",
+          "alias": "dtFromString",
+          "modifiesInstance": true
+        },
+        "FromTimeZone": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/fromTimezone",
+          "name": "fromTimezone"
+        },
+        "GetTimeZone": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/getTimezone",
+          "name": "getTimezone"
+        },
+        "Hour": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/hour",
+          "name": "hour"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/isEmpty",
+          "name": "isEmpty",
+          "alias": "dIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "Millisecond": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/millisecond",
+          "name": "millisecond"
+        },
+        "Minute": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/minute",
+          "name": "minute"
+        },
+        "Month": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/month",
+          "name": "month"
+        },
+        "MonthName": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/monthName",
+          "name": "monthName"
+        },
+        "New": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/newInstance",
+          "name": "newInstance",
+          "alias": "dtNewInstance"
+        },
+        "Now": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/now",
+          "name": "now"
+        },
+        "Second": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/second",
+          "name": "second"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "dtSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "dtSetEmpty"
+        },
+        "SetTimeZone": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/setTimezone",
+          "name": "setTimezone"
+        },
+        "Time": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/time",
+          "name": "time"
+        },
+        "ToDate": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/toDate",
+          "name": "toDate",
+          "alias": "dtToDate"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/toString",
+          "name": "toString",
+          "alias": "dtToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/toString",
+          "name": "toString",
+          "alias": "dtToString"
+        },
+        "ToUniversalTime": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/datetime/toUniversalTime",
+          "name": "toUniversalTime"
+        },
+        "Year": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/date/year",
+          "name": "year"
+        }
+      }
+    },
+    "Collection": {
+      "members": {
+        "Count": {
+          "available": true
+        },
+        "CurrentItem": {
+          "available": true
+        }
+      }
+    },
+    "GeneXus.Client.ClientStorage": {
+      "members": {
+        "Set": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-storage/set",
+          "name": "set",
+          "alias": "csSet"
+        },
+        "Get": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-storage/get",
+          "name": "get"
+        },
+        "Remove": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-storage/remove",
+          "name": "remove"
+        },
+        "Clear": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-storage/clear",
+          "name": "clear"
+        }
+      }
+    },
+    "GeneXus.Client.ClientInformation": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-information",
+      "members": {
+        "Id": {
+          "asMethod": true,
+          "available": true
+        },
+        "OSName": {
+          "asMethod": true,
+          "available": true
+        },
+        "OSVersion": {
+          "asMethod": true,
+          "available": true
+        },
+        "NetworkID": {
+          "asMethod": true,
+          "available": true
+        },
+        "Language": {
+          "asMethod": true,
+          "available": true
+        },
+        "DeviceType": {
+          "asMethod": true,
+          "available": true
+        },
+        "PlatformName": {
+          "asMethod": true,
+          "available": true
+        },
+        "AppVersionCode": {
+          "asMethod": true,
+          "available": true
+        },
+        "AppVersionName": {
+          "asMethod": true,
+          "available": true
+        },
+        "ApplicationId": {
+          "asMethod": true,
+          "available": true
+        }
+      }
+    },
+    "GeneXus.Client.Socket": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/client/client-socket"
+    },
+    "GeneXus.Common.UI.Navigation": {
+      "members": {
+        "CollapseTarget": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/navigation",
+          "name": "collapseTarget",
+          "notifiesGenerator": true
+        },
+        "ExpandTarget": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/navigation",
+          "name": "expandTarget",
+          "notifiesGenerator": true
+        },
+        "HideTarget": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/navigation",
+          "name": "hideTarget",
+          "notifiesGenerator": true
+        },
+        "ShowTarget": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/navigation",
+          "name": "showTarget",
+          "notifiesGenerator": true
+        }
+      }
+    },
+    "GeneXus.Common.UI.DesignSystem": {
+      "members": {
+        "GetOption": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/designsystem",
+          "name": "getOption"
+        },
+        "GetOptions": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/designsystem",
+          "name": "getOptions"
+        },
+        "SetOption": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/designsystem",
+          "name": "setOption",
+          "notifiesGenerator": true
+        },
+        "ClearOption": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/ui/designsystem",
+          "name": "clearOption",
+          "notifiesGenerator": true
+        }
+      }
+    },
+    "GeneXus.SD.Calendar": {
+      "members": {
+        "Schedule": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/calendar/schedule",
+          "name": "schedule"
+        }
+      }
+    },
+    "GeneXus.SD.Interop": {
+      "members": {
+        "CanOpen": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/canOpen",
+          "name": "canOpen"
+        },
+        "Confirm": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/confirm",
+          "name": "confirm",
+          "notifiesGenerator": true
+        },
+        "IOSSetBadgeTextToTabIndex": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/setBadgeText",
+          "name": "setBadgeText",
+          "notifiesGenerator": true
+        },
+        "Msg": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/msg",
+          "name": "msg",
+          "notifiesGenerator": true
+        },
+        "Open": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/openInBrowser",
+          "name": "openInBrowser"
+        },
+        "OpenInBrowser": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/openInBrowser",
+          "name": "openInBrowser"
+        },
+        "PlaceCall": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/placeCall",
+          "name": "placeCall"
+        },
+        "SendEmail": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/interop/sendEmail",
+          "name": "sendEmail"
+        }
+      }
+    },
+    "GeneXus.SD.Media.Camera": {
+      "members": {
+        "TakePhoto": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/media/camera/takePhoto",
+          "name": "takePhoto",
+          "notifiesGenerator": true
+        },
+        "RecordVideo": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/media/camera/recordVideo",
+          "name": "recordVideo",
+          "notifiesGenerator": true
+        }
+      }
+    },
+    "GeneXus.SD.Media.PhotoLibrary": {
+      "members": {
+        "ChooseImage": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/media/photoLibrary/chooseImage",
+          "name": "chooseImage",
+          "notifiesGenerator": true
+        }
+      }
+    },
+    "GeneXus.SD.Network": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/network",
+      "members": {
+        "ApplicationServerURL": {
+          "asMethod": true,
+          "available": true
+        }
+      }
+    },
+    "GeneXus.SD.Synchronization.SynchronizationEvents": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/sd/synchronization/synchronizationEvents"
+    },
+    "GeneXus.Social.Share": {
+      "members": {
+        "ShareText": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/social/share/shareText",
+          "name": "shareText"
+        }
+      }
+    },
+    "Audio": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "Binary": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "BinaryFile": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "Blob": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "Image": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "Video": {
+      "members": {
+        "FromString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/fromString",
+          "name": "fromString",
+          "modifiesInstance": true,
+          "alias": "tFromString"
+        },
+        "IsEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/isEmpty",
+          "name": "isEmpty",
+          "alias": "tIsEmpty"
+        },
+        "IsNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/misc/isNull",
+          "name": "isNull"
+        },
+        "SetEmpty": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "SetNull": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/setEmpty",
+          "name": "setEmpty",
+          "modifiesInstance": true,
+          "alias": "tSetEmpty"
+        },
+        "ToFormattedString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        },
+        "ToString": {
+          "path": "@genexus/web-standard-functions/dist/lib-esm/text/toString",
+          "name": "toString",
+          "alias": "tToString"
+        }
+      }
+    },
+    "XMLReader": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/types/xmlreader"
+    },
+    "XMLWriter": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/types/xmlwriter"
+    },
+    "GeneXus.Common.Log": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/log"
+    },
+    "GeneXus.Common.Geolocation": {
+      "path": "@genexus/web-standard-functions/dist/lib-esm/gxcore/common/geolocation",
+      "members": {
+        "GetMyLocation": {
+          "name": "getMyLocation",
+          "isAsync": true
+        },
+        "GetLocation": {
+          "name": "getGeolocation",
+          "alias": "getGeolocation"
+        }
+      }
+    },
+    "GeneXus.SD.Scanner": {
+      "members": {
+        "ScanBarcode": {
+          "name": "scanBarcode",
+          "alias": "scanBarcode",
+          "isAsync": true
+        },
+        "ScanInLoop": {
+          "name": "scanInLoop",
+          "alias": "scanInLoop",
+          "isAsync": true
+        }
+      }
+    }
+  },
+  "disambiguated": {
+    "Character": {
+      "HTMLClean": "cHtmlClean"
+    },
+    "Varchar": {
+      "HTMLClean": "vHtmlClean"
+    },
+    "LongVarchar": {
+      "HTMLClean": "lHtmlClean"
+    },
+    "DateTime": {
+      "Set": "dtSet"
+    },
+    "Binary": {
+      "FromBase64String": "binaryFromBase64String"
+    },
+    "BinaryFile": {
+      "FromURL": "binaryFileFromURL"
+    },
+    "BusinessComponent": {
+      "Clone": "bcClone",
+      "Delete": "bcDelete",
+      "FromJson": "bcFromJson",
+      "FromJsonFile": "bcFromJsonFile",
+      "FromXml": "bcFromXml",
+      "FromXmlFile": "bcFromXmlFile",
+      "GetValue": "bcGetValue",
+      "Save": "bcSave",
+      "ToJson": "bcToJson",
+      "ToXml": "bcToXml",
+      "Update": "bcUpdate"
+    },
+    "BusinessComponentCollection": {
+      "GetByKey": "bcCollectionGetByKey",
+      "RemoveByKey": "bcCollectionRemoveByKey",
+      "Insert": "bcCollectionInsert",
+      "InsertOrUpdate": "bcCollectionInsertOrUpdate",
+      "Update": "bcCollectionUpdate",
+      "Delete": "bcCollectionDelete"
+    },
+    "Cache": {
+      "Get": "cacheGet",
+      "Set": "cacheSet",
+      "Contains": "cacheContains",
+      "Remove": "cacheRemove",
+      "Clear": "cacheClear"
+    },
+    "Collection": {
+      "Add": "collectionAdd",
+      "Clear": "collectionClear",
+      "Item": "collectionItem",
+      "Remove": "collectionRemove",
+      "ToXml": "collectionToXml",
+      "FromXml": "collectionFromXml",
+      "FromXmlFile": "collectionFromXmlFile",
+      "ToJson": "collectionToJson",
+      "FromJson": "collectionFromJson",
+      "FromJsonFile": "collectionFromJsonFile",
+      "Clone": "collectionClone",
+      "IndexOf": "collectionIndexOf"
+    },
+    "Directory": {
+      "Delete": "dirDelete",
+      "Exists": "dirExists"
+    },
+    "File": {
+      "Close": "fileClose",
+      "Create": "fileCreate",
+      "Delete": "fileDelete",
+      "Exists": "fileExists",
+      "GetAbsoluteName": "fileGetAbsoluteName",
+      "GetName": "fileGetName",
+      "Open": "fileOpen",
+      "Rename": "fileRename",
+      "HTMLClean": "fileHtmlClean",
+      "XSLTApply": "fileXsltApply"
+    },
+    "FileCollection": {
+      "Item": "fileCollectionItem"
+    },
+    "Geography": {
+      "Distance": "geographyDistance",
+      "FromString": "geographyFromString",
+      "Intersect": "geographyIntersect",
+      "IsEmpty": "geographyIsEmpty",
+      "IsNull": "geographyIsNull",
+      "IsNullOrEmpty": "geographyIsNullOrEmpty",
+      "SetEmpty": "geographySetEmpty",
+      "SetNull": "geographySetNull",
+      "ToGeoJson": "geographyToGeoJson",
+      "ToString": "geographyToString",
+      "ToWkt": "geographyToWkt"
+    },
+    "GeoLine": {
+      "IsEmpty": "geolineIsEmpty",
+      "IsNull": "geolineIsNull",
+      "IsNullOrEmpty": "geolineIsNullOrEmpty",
+      "FromString": "geolineFromString",
+      "SetEmpty": "geolineSetEmpty",
+      "SetNull": "geolineSetNull",
+      "ToGeography": "geolineToGeography",
+      "ToGeoJson": "geolineToGeoJson",
+      "ToString": "geolineToString",
+      "ToWkt": "geolineToWkt"
+    },
+    "GeoPoint": {
+      "New": "newGeopoint",
+      "IsEmpty": "geopointIsEmpty",
+      "IsNull": "geopointIsNull",
+      "IsNullOrEmpty": "geopointIsNullOrEmpty",
+      "FromString": "geopointFromString",
+      "SetEmpty": "geopointSetEmpty",
+      "SetNull": "geopointSetNull",
+      "ToGeography": "geopointToGeography",
+      "ToGeoJson": "geopointToGeoJson",
+      "ToString": "geopointToString",
+      "ToWkt": "geopointToWkt"
+    },
+    "GeoPolygon": {
+      "Area": "geopolygonArea",
+      "IsEmpty": "geopolygonIsEmpty",
+      "IsNull": "geopolygonIsNull",
+      "IsNullOrEmpty": "geopolygonIsNullOrEmpty",
+      "FromString": "geopolygonFromString",
+      "SetEmpty": "geopolygonSetEmpty",
+      "SetNull": "geopolygonSetNull",
+      "ToGeography": "geopolygonToGeography",
+      "ToGeoJson": "geopolygonToGeoJson",
+      "ToString": "geopolygonToString",
+      "ToWkt": "geopolygonToWkt"
+    },
+    "HttpClient": {
+      "AddFile": "httpClientAddFile",
+      "AddHeader": "httpClientAddHeader",
+      "AddString": "httpClientAddString",
+      "GetHeader": "httpClientGetHeader",
+      "ToFile": "httpClientToFile",
+      "ToString": "httpClientToString"
+    },
+    "HttpRequest": {
+      "ToString": "httpRequestToString"
+    },
+    "HttpResponse": {
+      "SetCookie": "httpResponseSetCookie"
+    },
+    "Properties": {
+      "Clear": "propClear",
+      "FromJson": "propFromJson",
+      "Get": "propGet",
+      "Remove": "propRemove",
+      "Set": "propSet",
+      "ToJson": "propToJson"
+    },
+    "SDT": {
+      "IsNull": "sdtIsNull"
+    },
+    "SDTItem": {
+      "ToFormattedString": "sdtItemToFormattedString"
+    },
+    "SearchResultCollection": {
+      "Item": "searchResultCollectionItem"
+    },
+    "StorageProvider": {
+      "Get": "storageProviderGet"
+    },
+    "StringCollection": {
+      "Add": "strCollectionAdd",
+      "Clear": "strCollectionClear",
+      "Item": "strCollectionItem"
+    },
+    "TextSearch": {
+      "Add": "textSearchadd",
+      "Delete": "textSearchdelete",
+      "Find": "textSearchfind",
+      "Update": "textSearchupdate"
+    },
+    "Video": {
+      "FromURL": "videoFromURL"
+    },
+    "WebSession": {
+      "Clear": "websessionClear",
+      "Get": "websessionGet",
+      "Remove": "websessionRemove",
+      "Set": "websessionSet"
+    },
+    "Window": {
+      "Open": "windowOpen"
+    },
+    "XMLReader": {
+      "Close": "xmlrClose",
+      "Open": "xmlrOpen"
+    },
+    "XMLWriter": {
+      "Close": "xmlwClose",
+      "Open": "xmlwOpen",
+      "OpenRequest": "xmlwOpenRequest",
+      "OpenResponse": "xmlwOpenResponse"
+    },
+    "GeneXus.Common.Analytics": {
+      "SetUserId": "setAnalyticsUserId"
+    },
+    "GeneXus.Common.Log": {
+      "Error": "logError"
+    },
+    "GeneXus.SD.Actions": {
+      "Delete": "deleteAction"
+    },
+    "GeneXus.SD.Media.Audio": {
+      "Stop": "audioStop"
+    },
+    "GeneXus.SD.Media.PhotoLibrary": {
+      "Save": "savePhoto"
+    },
+    "GeneXus.SD.Notifications.RemoteNotifications": {
+      "Add": "remoteNotificationAdd"
+    },
+    "GeneXus.SD.WebBrowser": {
+      "Open": "webBrowserOpen"
+    },
+    "GeneXus.Social.Facebook": {
+      "ShareImage": "fbShareImage"
+    }
+  },
+  "ignored": {
+    "AttributePEM": "all",
+    "Audio": ["GetOldValue"],
+    "BasedOnEnumeratedDomain": "all",
+    "Blob": ["GetOldValue"],
+    "Binary": ["GetOldValue"],
+    "Boolean": ["GetOldValue"],
+    "Core": [
+      "Default",
+      "Average",
+      "Count",
+      "Find",
+      "Max",
+      "Min",
+      "Sum",
+      "Call",
+      "UDF",
+      "UDP",
+      "Hidden",
+      "NoAccept",
+      "NoConfirm",
+      "NoLoad",
+      "NoPrompt",
+      "NoRead",
+      "Serial",
+      "OutputFile",
+      "Printer",
+      "XFile",
+      "XIndex",
+      "XLocation",
+      "XOrder",
+      "XUse"
+    ],
+    "Character": ["Enable national language support", "GetOldValue"],
+    "CryptoAsymmetricEncrypt": "all",
+    "CryptoCertificate": "all",
+    "CryptoSign": "all",
+    "CryptoSignXml": "all",
+    "CryptoSymmetricEncrypt": "all",
+    "Date": ["GetOldValue"],
+    "DateTime": ["GetOldValue"],
+    "DBConnection": "all",
+    "DomainPEM": "all",
+    "ExcelCells": "all",
+    "ExcelDocument": "all",
+    "Geography": [
+      "Distance",
+      "FromString",
+      "FromWkt",
+      "FromGeoJson",
+      "Intersect"
+    ],
+    "GeoLine": [
+      "Distance",
+      "FromString",
+      "FromWkt",
+      "FromGeoJson",
+      "Intersect"
+    ],
+    "GeoPoint": [
+      "Distance",
+      "FromString",
+      "FromWkt",
+      "FromGeoJson",
+      "Intersect"
+    ],
+    "GeoPolygon": [
+      "Area",
+      "Distance",
+      "FromString",
+      "FromWkt",
+      "FromGeoJson",
+      "Intersect"
+    ],
+    "GUID": ["AutogenerateGuid", "IsMatch"],
+    "GXDataSelector": "all",
+    "GxImage": "all",
+    "GXProgram": "all",
+    "GXProgramMetadata": "all",
+    "Image": ["GetOldValue"],
+    "ImagePEMs": "all",
+    "LDAPClient": "all",
+    "LongVarchar": ["Enable national language support", "GetOldValue"],
+    "MailMessage": "all",
+    "MailRecipient": "all",
+    "MAPISession": "all",
+    "Meta_collection": "all",
+    "Numeric": ["Autonumber", "GetOldValue"],
+    "OutlookSession": "all",
+    "OutputGroup": "all",
+    "POP3Session": "all",
+    "Queue": "all",
+    "QueueMessage": "all",
+    "RecipientCollection": "all",
+    "SDObject": "all",
+    "Synchronization": "all",
+    "SMTPSession": "all",
+    "Varchar": ["Enable national language support", "GetOldValue"],
+    "VariablePEM": "all",
+    "Video": ["GetOldValue"],
+    "Void": "all",
+    "WApiActionPerformedEvent": "all",
+    "WApiActivity": "all",
+    "WApiApplicationData": "all",
+    "WApiAssignmentChangeEvent": "all",
+    "WApiAttribute": "all",
+    "WApiCalendar": "all",
+    "WApiCollection": "all",
+    "WApiDataChangeEvent": "all",
+    "WApiDocumentDefinition": "all",
+    "WApiDocumentInstance": "all",
+    "WApiDocumentRepository": "all",
+    "WApiError": "all",
+    "WApiEvent": "all",
+    "WApiEventRepository": "all",
+    "WApiFilter": "all",
+    "WApiObject": "all",
+    "WApiOrganizationalModel": "all",
+    "WApiPriorityChangeEvent": "all",
+    "WApiProcessDefinition": "all",
+    "WApiProcessInstance": "all",
+    "WApiRestriction": "all",
+    "WApiRestrictionDefinition": "all",
+    "WApiRole": "all",
+    "WApiServer": "all",
+    "WApiStateChangeEvent": "all",
+    "WApiUser": "all",
+    "WApiWebApplication": "all",
+    "WApiWorkitem": "all",
+    "WordDocument": "all"
+  }
+}
