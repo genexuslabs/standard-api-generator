@@ -42,7 +42,8 @@ function generate(metadata, options) {
             isStatic: meth.static ? true : undefined,
             notifiesGenerator: meth.notifiesGenerator ? true : undefined,
             modifiesInstance: meth.modifiesInstance ? true : undefined,
-            isAsync: meth.isAsync ? true : undefined
+            isAsync: meth.isAsync ? true : undefined,
+            returns: meth.returns === "Any" ? "Unknown" : meth.returns
           };
         })
         : undefined;
