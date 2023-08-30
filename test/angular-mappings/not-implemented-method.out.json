@@ -9,7 +9,8 @@
         {
           "name": "IsEmpty",
           "implementationName": "isEmpty",
-          "externalName": "isEmpty"
+          "externalName": "isEmpty",
+          "returns": "Boolean"
         }
       ]
     }

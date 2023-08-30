@@ -43,7 +43,7 @@ function generate(metadata, options) {
             notifiesGenerator: meth.notifiesGenerator ? true : undefined,
             modifiesInstance: meth.modifiesInstance ? true : undefined,
             isAsync: meth.isAsync ? true : undefined,
-            returns: meth.returns === "Any" ? "Unknown" : meth.returns
+            returns: (meth.returns === "Any") ? ((options.implemented && options.implemented.Core && options.implemented.Core.members && options.implemented.Core.members[meth.name] && options.implemented.Core.members[meth.name].returns) ? (options.implemented.Core.members[meth.name].returns) : ("Unknown")) : (meth.returns)
           };
         })
         : undefined;

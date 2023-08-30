@@ -11,7 +11,8 @@
                     "implementationName": "getMyLocation",
                     "externalName": "getMyLocation",
                     "isStatic": true,
-                    "isAsync": true
+                    "isAsync": true,
+                    "returns": "GeneXus.Common.GeolocationInfo"
                 }
             ]
         }

@@ -10,7 +10,8 @@
                     "name": "IsEmpty",
                     "implementationName": "isEmpty",
                     "externalName": "isEmpty",
-                    "isStatic": true
+                    "isStatic": true,
+                    "returns": "Boolean"
                 },
                 {
                     "name": "OSName",
