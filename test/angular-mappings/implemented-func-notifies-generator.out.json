@@ -10,7 +10,8 @@
                     "externalName": "msg",
                     "externalModuleName": "@genexus/web-standard-functions/dist/lib-esm/index",
                     "isStatic": true,
-                    "notifiesGenerator": true
+                    "notifiesGenerator": true,
+                    "returns": "Unknown"
                 }
             ]
         }

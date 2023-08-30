@@ -9,7 +9,8 @@
         {
             "name": "ToFormattedString",
             "implementationName": "bToFormattedString",
-            "externalName": "bToFormattedString"
+            "externalName": "bToFormattedString",
+            "returns": "Unknown"
         }
       ]
     }
